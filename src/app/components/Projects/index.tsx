@@ -79,34 +79,39 @@ const Projects = () => {
               }
             }}
           >
-            {Object.keys(projectData[imageIndex]).map((key: string) => (
-              <div className="flex justify-between">
-                <div className="p-2 uppercase font-semibold w-1/2">{key}</div>
-                <div className="p-2 text-[12px] text-end w-2/3">
-                  {Array.isArray(projectData[imageIndex][key])
-                    ? projectData[imageIndex][key].map((link: string) => (
-                        <>
-                          <a
-                            className="text-blue-800"
-                            target="__blank"
-                            href={link}
-                          >
-                            {link}
-                          </a>
-                          <br />
-                        </>
-                      ))
-                    : projectData[imageIndex][key]}
+            {Object.keys(projectData[imageIndex]).map(
+              (key: string, index: number) => (
+                <div
+                  className="flex justify-between"
+                  key={`projectData-${index}`}
+                >
+                  <div className="p-2 uppercase font-semibold w-1/2">{key}</div>
+                  <div className="p-2 text-[12px] text-end w-2/3">
+                    {Array.isArray(projectData[imageIndex][key])
+                      ? projectData[imageIndex][key].map((link: string) => (
+                          <>
+                            <a
+                              className="text-blue-800"
+                              target="__blank"
+                              href={link}
+                            >
+                              {link}
+                            </a>
+                            <br />
+                          </>
+                        ))
+                      : projectData[imageIndex][key]}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
       <div className="w-1/2 border border-blue-500 flex justify-center items-center text-xl">
         <ul style={{ listStyle: "inside" }}>
           {projectData.map(({ name }, index) => (
-            <li key={index} className="mt-1">
+            <li key={`project-title-${index}`} className="mt-1">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
