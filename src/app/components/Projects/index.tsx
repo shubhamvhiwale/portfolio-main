@@ -39,22 +39,24 @@ const images = [
 
 const Projects = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [hobbyIndex, setHobbyIndex] = useState(0);
+  const imageIndex = wrap(0, projectData.length, page);
 
-  // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
-  // then wrap that within 0-2 to find our image ID in the array below. By passing an
-  // absolute page index as the `motion` component's `key` prop, `AnimatePresence` will
-  // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
-  const imageIndex = wrap(0, images.length, page);
-
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
+  const paginate = (pageIndex: number) => {
+    const newDirection = pageIndex > page ? 1 : -1;
+    setPage([pageIndex, newDirection]);
   };
+
   return (
     <div className="project-container flex">
-      <div className="w-1/2 border border-red-500">
+      <div className="w-1/2 flex justify-center items-center p-2">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
-            style={{ width: "200px" }}
+            className="h-[24rem] p-2"
+            style={{
+              width: "30rem !important",
+              minWidth: "30rem",
+            }}
             key={page}
             custom={direction}
             variants={variants}
@@ -62,6 +64,7 @@ const Projects = () => {
             animate="center"
             exit="exit"
             transition={{
+              duration: 0.4,
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
             }}
@@ -70,7 +73,6 @@ const Projects = () => {
             dragElastic={1}
             onDragEnd={(e, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
-
               if (swipe < -swipeConfidenceThreshold) {
                 paginate(1);
               } else if (swipe > swipeConfidenceThreshold) {
@@ -78,17 +80,48 @@ const Projects = () => {
               }
             }}
           >
-            {projectData[imageIndex].name}
+            {Object.keys(projectData[imageIndex]).map((key: string) => (
+              <div className="flex justify-between">
+                <div className="p-2 uppercase font-semibold w-1/2">{key}</div>
+                <div className="p-2 text-[12px] text-end w-2/3">
+                  {Array.isArray(projectData[imageIndex][key])
+                    ? projectData[imageIndex][key].map((link: string) => (
+                        <>
+                          <a
+                            className="text-blue-800"
+                            target="__blank"
+                            href={link}
+                          >
+                            {link}
+                          </a>
+                          <br />
+                        </>
+                      ))
+                    : projectData[imageIndex][key]}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="w-1/2 w-1/2 border border-blue-500">
-        <div className="p-next" onClick={() => paginate(1)}>
-          {"‣"}
-        </div>
-        <div className="p-prev" onClick={() => paginate(-1)}>
-          {"‣"}
-        </div>
+      <div className="w-1/2 border border-blue-500 flex justify-center items-center text-xl">
+        <ul style={{ listStyle: "inside" }}>
+          {projectData.map(({ name }, index) => (
+            <li key={index} className="mt-1">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                className={hobbyIndex !== index ? "text-gray-600" : ""}
+                onClick={() => {
+                  paginate(index);
+                  setHobbyIndex(index);
+                }}
+              >
+                {name}
+              </motion.button>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

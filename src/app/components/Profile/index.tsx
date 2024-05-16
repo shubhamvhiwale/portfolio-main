@@ -25,8 +25,6 @@ interface ProfileProps {
 const Profile = ({ image, name, age }: ProfileProps) => {
   const redirectToGmail = (toMail: string) => {
     const receiverEmail = "shubhamvhiwale@gmail.com"; // Replace with the recipient's email
-    // const subject = encodeURIComponent("Subject of your email");
-    // const body = encodeURIComponent("Body of your email");
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${receiverEmail}`;
     window.open(gmailUrl, "_blank");
   };

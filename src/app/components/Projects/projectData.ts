@@ -5,6 +5,7 @@ interface projectDataProps {
   technology: string;
   liveLink: string[];
   description: string;
+  [key: string]: any;
 }
 
 export const projectData: projectDataProps[] = [
@@ -75,21 +76,5 @@ export const projectData: projectDataProps[] = [
     liveLink: ["https://hbits.co"],
     description:
       "A hBits is the most experienced fractional ownership platform run by veterans with 35+ years of cumulative experience in commercial real estate    ",
-  },
-  {
-    name: "",
-    role: "",
-    duration: "",
-    technology: "",
-    liveLink: [],
-    description: "",
-  },
-  {
-    name: "",
-    role: "",
-    duration: "",
-    technology: "",
-    liveLink: [],
-    description: "",
   },
 ];
