@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const handleElementTopTouch = (elementRef: any) => {
+const HandleElementTopTouch = (elementRef: any) => {
   const [isDivTouchedToTop, setIsDivTouchedToTop] = useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +19,10 @@ const handleElementTopTouch = (elementRef: any) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [elementRef]);
   return {
     isDivTouchedToTop,
   };
 };
 
-export default handleElementTopTouch;
+export default HandleElementTopTouch;

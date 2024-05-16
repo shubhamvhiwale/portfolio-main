@@ -124,8 +124,9 @@ const WorkExperiences = () => {
 
   return (
     <>
-      {experience?.map((item) => (
+      {experience?.map((item, index) => (
         <ExperienceContent
+          key={`expkey-${index}`}
           joinDate={item.joinData}
           designation={item.designation}
           organizationName={item.organizationName}

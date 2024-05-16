@@ -44,14 +44,14 @@ export const initialTabs: IngredientProps[] = [
     icon: "🍅",
     label: "Frontend",
     data: [
-      <SiJavascript />,
-      <SiHtml5 />,
-      <SiRedux />,
-      <SiCss3 />,
-      <SiMaterialdesign />,
-      <FaReact />,
-      <FaBootstrap />,
-      <SiTailwindcss />,
+      <SiJavascript key="SiJavascript-icon" />,
+      <SiHtml5 key="SiHtml5-icon" />,
+      <SiRedux key="SiRedux-icon" />,
+      <SiCss3 key="SiCss3-icon" />,
+      <SiMaterialdesign key="SiMaterialdesign-icon" />,
+      <FaReact key="FaReact-icon" />,
+      <FaBootstrap key="FaBootstrap-icon" />,
+      <SiTailwindcss key="SiTailwindcss-icon" />,
     ],
     iconsProps: {
       iconCls: [
@@ -69,7 +69,12 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🥬",
     label: "Backend",
-    data: [<FaNodeJs />, <FaPython />, <AiOutlineDotNet />, <SiPhp />],
+    data: [
+      <FaNodeJs key="FaNodeJs-icon" />,
+      <FaPython key="FaPython-icon" />,
+      <AiOutlineDotNet key="AiOutlineDotNet-icon" />,
+      <SiPhp key="SiPhp-icon" />,
+    ],
     iconsProps: {
       iconCls: ["icon-nodejs", "icon-python", "icon-dotnet", "icon-php"],
     },
@@ -77,7 +82,11 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🧀",
     label: "Database",
-    data: [<SiMongodb />, <SiMysql />, <SiFirebase />],
+    data: [
+      <SiMongodb key="SiMongodb-icon" />,
+      <SiMysql key="SiMysql-icon" />,
+      <SiFirebase key="SiFirebase-icon" />,
+    ],
     iconsProps: {
       iconCls: ["icon-mongodb", "icon-mysql", "icon-firebase"],
     },
@@ -85,7 +94,11 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🥕",
     label: "Platform",
-    data: [<SiVisualstudiocode />, <SiPycharm />, <SiVisualstudio />],
+    data: [
+      <SiVisualstudiocode key="SiVisualstudiocode-icon" />,
+      <SiPycharm key="SiPycharm-icon" />,
+      <SiVisualstudio key="SiVisualstudio-icon" />,
+    ],
     iconsProps: {
       iconCls: ["icon-visualstudiocode", "icon-pycharm", "icon-visualstudio"],
     },
@@ -93,7 +106,12 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🍌",
     label: "OS",
-    data: [<SiLinux />, <SiWindows />, <SiAndroid />, <SiApple />],
+    data: [
+      <SiLinux key="SiLinux-icon" />,
+      <SiWindows key="SiWindows-icon" />,
+      <SiAndroid key="SiAndroid-icon" />,
+      <SiApple key="SiApple-icon" />,
+    ],
     iconsProps: {
       iconCls: ["icon-linux", "icon-windows", "icon-android", "icon-apple"],
     },
@@ -101,7 +119,12 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🫐",
     label: "Management",
-    data: [<SiGithub />, <SiBitbucket />, <SiAzuredevops />, <SiJira />],
+    data: [
+      <SiGithub key="SiGithub-icon" />,
+      <SiBitbucket key="SiBitbucket-icon" />,
+      <SiAzuredevops key="SiAzuredevops-icon" />,
+      <SiJira key="SiJira-icon" />,
+    ],
     iconsProps: {
       iconCls: ["icon-github", "icon-bitbucket", "icon-azuredev", "icon-jira"],
     },
@@ -109,7 +132,7 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🫐",
     label: "Testing",
-    data: [<SiJest />],
+    data: [<SiJest key="SiJest-icon" />],
     iconsProps: {
       iconCls: ["icon-jest"],
     },
@@ -117,7 +140,12 @@ export const initialTabs: IngredientProps[] = [
   {
     icon: "🥂",
     label: "Cloud",
-    data: [<SiAmazon />, <SiFirebase />, <SiHeroku />, <SiDigitalocean />],
+    data: [
+      <SiAmazon key="SiAmazon-icon" />,
+      <SiFirebase key="SiFirebase-icon" />,
+      <SiHeroku key="SiHeroku-icon" />,
+      <SiDigitalocean key="SiDigitalocean-icon" />,
+    ],
     iconsProps: {
       iconCls: [
         "icon-amazon",

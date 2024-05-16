@@ -24,7 +24,7 @@ interface ProfileProps {
 
 const Profile = ({ image, name, age }: ProfileProps) => {
   const redirectToGmail = (toMail: string) => {
-    const receiverEmail = "shubhamvhiwale@gmail.com"; // Replace with the recipient's email
+    const receiverEmail = "shubhamvhiwale@gmail.com"; // Replace with the recipients email
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${receiverEmail}`;
     window.open(gmailUrl, "_blank");
   };
@@ -38,26 +38,27 @@ const Profile = ({ image, name, age }: ProfileProps) => {
     >
       <div className="border w-[75%] h-full flex justify-center flex-col p-5">
         <h3 className="text-3xl" data-aos-delay="500" data-aos="fade-right">
-          Hello, It's me
+          Hello, Its me
         </h3>
         <h3 data-aos="fade-right" className="text-7xl md:text-5xl">
           SHUBHAM HIWALE
         </h3>
         <p className="text-[12px] pt-3">
-          A recent graduate with a Bachelor's degree in Computer Science from
-          MIT College, Aurangabad, was born in 2000. Throughout my academic
-          journey, I've been driven by a profound interest in technology and a
-          thirst for knowledge in the realm of computer science. MIT College
-          provided me with a nurturing environment to hone my skills in
-          programming, delve into algorithms, and master data structures. Now
-          equipped with a solid foundation, I'm eager to apply my expertise to
-          real-world challenges and contribute meaningfully to the field.
+          A recent graduate with a Bachelors degree in Computer Science from MIT
+          College, Aurangabad, was born in 2000. Throughout my academic journey,
+          Ive been driven by a profound interest in technology and a thirst for
+          knowledge in the realm of computer science. MIT College provided me
+          with a nurturing environment to hone my skills in programming, delve
+          into algorithms, and master data structures. Now equipped with a solid
+          foundation, Im eager to apply my expertise to real-world challenges
+          and contribute meaningfully to the field.
         </p>
         <div className="flex justify-between items-center">
           <div className="flex">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
               <div data-aos="fade-up" data-aos-delay="600">
                 <FaLinkedin
+                  key="linkedin-icon"
                   size={23}
                   className="cursor-pointer hover:text-blue-500"
                 />
@@ -70,6 +71,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             >
               <div data-aos="fade-up" data-aos-delay="700">
                 <FaGithub
+                  key="github-icon"
                   size={23}
                   className="cursor-pointer hover:text-gray-700"
                 />
@@ -82,6 +84,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             >
               <div data-aos="fade-up" data-aos-delay="800">
                 <FaFacebook
+                  key="facebook-icon"
                   size={23}
                   className="cursor-pointer hover:text-blue-700"
                 />
@@ -95,6 +98,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             >
               <div data-aos="fade-up" data-aos-delay="900">
                 <SiVercel
+                  key="vercel-icon"
                   size={23}
                   className="cursor-pointer hover:text-white"
                 />
@@ -122,7 +126,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             onClick={() => redirectToGmail("shubhamvhiwale@rgmail.com")}
           >
             <div className="gmail-icon">
-              <SiGmail />
+              <SiGmail key="gmail" />
             </div>
             shubhamvhiwale@gmail.com
           </div>
@@ -134,7 +138,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             onClick={() => redirectToPhoneDial("8600888776")}
           >
             <div className="phone-icon">
-              <FaPhone />
+              <FaPhone key="phone-icon" />
             </div>
             +91 8600888776
           </div>

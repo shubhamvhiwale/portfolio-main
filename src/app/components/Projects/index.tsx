@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { wrap } from "popmotion";
 import { motion, AnimatePresence } from "framer-motion";
-import Card from "../Card";
 import { projectData } from "./projectData";
 import "./index.css";
 
