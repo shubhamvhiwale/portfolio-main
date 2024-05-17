@@ -3,15 +3,15 @@ import React from "react";
 const DevMeven = () => {
   return (
     <div className="min-h-screen border w-full flex items-center justify-center bg-[#E8DAFE]">
-      <div className="w-100 w-[100%] md:w-[64%]">
-        <div className="flex justify-between px-3">
-          <div className="font-bold">DevMaven</div>
-          <div>2+ YEARS EXPERIENCED IN DEVELOPMENT</div>
+      <div className="w-full md:w-[64%]">
+        <div className="flex justify-between px-3 flex-col sm:flex-row">
+          <div className="font-bold text-3xl">DevMaven</div>
+          <div className="text-[28px]">2+ YEARS EXPERIENCED AS</div>
         </div>
-        <div className="w-full text-center text-[5em]  md:text-[8em] font-bold font-jostnormal">
+        <div className="w-full text-center text-[4em] sm:text-[5em]  md:text-[8em] font-bold font-jostnormal">
           JAVASCRIPT
         </div>
-        <div className="tracking-[.20em] text-center text-[55px] md:text-[45px] px-3">
+        <div className="tracking-[.20em] text-[48px]  sm:text-[55px] md:text-[45px] px-3">
           FULL STACK DEVELOPER
         </div>
         <div className="px-3 mt-5 md:text-[12px] text-center">
