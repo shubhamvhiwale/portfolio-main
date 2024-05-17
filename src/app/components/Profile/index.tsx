@@ -34,9 +34,9 @@ const Profile = ({ image, name, age }: ProfileProps) => {
   return (
     <div
       style={{ height: "100vh" }}
-      className="w-full border flex justify-between"
+      className="w-full border flex flex-col-reverse sm:flex-row  justify-between"
     >
-      <div className="border w-[75%] h-full flex justify-center flex-col p-5">
+      <div className="border w-full sm:w-[75%] h-full flex justify-center flex-col p-5">
         <h3 className="text-3xl" data-aos-delay="500" data-aos="fade-right">
           Hello, Its me
         </h3>
@@ -156,7 +156,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           />
         </div>
       </div>
-      <div className="profile-container border w-[25%] md:w-3/4 h-full"></div>
+      <div className="profile-container border w-full  sm:w-[25%] md:w-3/4 h-[70%]  sm:h-full"></div>
     </div>
   );
 };

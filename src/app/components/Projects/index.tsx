@@ -47,15 +47,14 @@ const Projects = () => {
   };
 
   return (
-    <div className="project-container flex">
-      <div className="w-1/2 flex justify-center items-center p-2">
+    <div className="project-container flex flex-col">
+      <div
+        style={{ boxShadow: "2px 2px 40px 2px", zIndex: 100 }}
+        className="sm:w-1/2 w-full flex justify-center items-center  sm:p-2"
+      >
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
-            className="h-[24rem] p-2"
-            style={{
-              width: "30rem !important",
-              minWidth: "30rem",
-            }}
+            className="h-[30rem] sm:h-[24rem] p-2 bg-[#e8dafe] min-w-[20rem]  sm:min-w-[30rem] w-[30rem]"
             key={page}
             custom={direction}
             variants={variants}
@@ -65,7 +64,7 @@ const Projects = () => {
             transition={{
               duration: 0.4,
               x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
+              opacity: { duration: 0.7 },
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -85,8 +84,10 @@ const Projects = () => {
                   className="flex justify-between"
                   key={`projectData-${index}`}
                 >
-                  <div className="p-2 uppercase font-semibold w-1/2">{key}</div>
-                  <div className="p-2 text-[12px] text-end w-2/3">
+                  <div className="p-2 uppercase font-semibold sm:w-[22%]">
+                    {key}
+                  </div>
+                  <div className="p-2 text-[14px] text-end sm:w-full">
                     {Array.isArray(projectData[imageIndex][key])
                       ? projectData[imageIndex][key].map((link: string) => (
                           <>
@@ -108,7 +109,7 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="w-1/2 border border-blue-500 flex justify-center items-center text-xl">
+      <div className="sm:w-1/2 w-full h-full  flex justify-center items-center text-xl bg-[#d3bafc]">
         <ul style={{ listStyle: "inside" }}>
           {projectData.map(({ name }, index) => (
             <li key={`project-title-${index}`} className="mt-1">

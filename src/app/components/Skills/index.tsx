@@ -64,7 +64,7 @@ const Skills = () => {
                         <motion.div
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className={`p-5 rounded-md m-2  icon-container ${selectedTab.iconsProps?.iconCls[index]} cursor-pointer`}
+                          className={`p-5 rounded-md m-2 icon-container ${selectedTab.iconsProps?.iconCls[index]} cursor-pointer`}
                         >
                           {item}
                         </motion.div>
@@ -75,7 +75,7 @@ const Skills = () => {
               </motion.div>
             ) : (
               <motion.div
-                className="h-[90vh] w-full flex justify-center "
+                className="h-[90vh] w-full flex justify-center"
                 key={selectedTab ? selectedTab.label : "empty"}
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -90,7 +90,7 @@ const Skills = () => {
                           <motion.div
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className={`p-5 w-[100px] mb-2 h-[100px] rounded-md icon-container flex justify-center items-center ${item.iconsProps.iconCls[cls]} cursor-pointer`}
+                            className={`p-5 w-[80px] sm:w-[100px] mb-2 h-[80px] sm:h-[100px] rounded-md icon-container flex justify-center items-center ${item.iconsProps.iconCls[cls]} cursor-pointer`}
                           >
                             {icon}
                           </motion.div>
