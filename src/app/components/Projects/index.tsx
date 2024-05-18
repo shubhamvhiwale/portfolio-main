@@ -47,7 +47,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="project-container flex flex-col">
+    <div className="project-container flex flex-col sm:flex-row">
       <div
         style={{ boxShadow: "2px 2px 40px 2px", zIndex: 100 }}
         className="sm:w-1/2 w-full flex justify-center items-center  sm:p-2"

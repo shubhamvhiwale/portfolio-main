@@ -36,11 +36,11 @@ const Profile = ({ image, name, age }: ProfileProps) => {
       style={{ height: "100vh" }}
       className="w-full border flex flex-col-reverse sm:flex-row  justify-between"
     >
-      <div className="border w-full sm:w-[75%] h-full flex justify-center flex-col p-5">
-        <h3 className="text-3xl" data-aos-delay="500" data-aos="fade-right">
+      <div className="w-full sm:w-[75%] h-[100%] sm:h-full flex justify-center flex-col p-5">
+        <h3 className="text-2xl" data-aos-delay="500" data-aos="fade-right">
           Hello, Its me
         </h3>
-        <h3 data-aos="fade-right" className="text-7xl md:text-5xl">
+        <h3 data-aos="fade-right" className="text-4xl sm:text-7xl md:text-5xl">
           SHUBHAM HIWALE
         </h3>
         <p className="text-[12px] pt-3">
@@ -117,12 +117,12 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             </motion.button>
           </div>
         </div>
-        <div className="flex justify-between mt-8 text-xs">
+        <div className="flex justify-between text-xs h-[140px]">
           <div
             data-aos="fade-right"
             data-aos-delay="600"
             data-tooltip-id="gmail-tooltip"
-            className="cursor-pointer  hover:font-bold email-container"
+            className="cursor-pointer  hover:font-bold email-container mt-3"
             onClick={() => redirectToGmail("shubhamvhiwale@rgmail.com")}
           >
             <div className="gmail-icon">
@@ -134,7 +134,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             data-aos="fade-left"
             data-aos-delay="600"
             data-tooltip-id="phone-num-tooltip"
-            className="cursor-pointer  hover:font-bold phone-container"
+            className="cursor-pointer  hover:font-bold phone-container mt-3"
             onClick={() => redirectToPhoneDial("8600888776")}
           >
             <div className="phone-icon">
@@ -156,7 +156,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           />
         </div>
       </div>
-      <div className="profile-container border w-full  sm:w-[25%] md:w-3/4 h-[70%]  sm:h-full"></div>
+      <div className="profile-container border w-full  sm:w-[25%] md:w-3/4 h-[75%]  sm:h-full"></div>
     </div>
   );
 };
