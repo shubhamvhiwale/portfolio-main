@@ -167,14 +167,16 @@ h1 {
 
 h2 {
   margin: 0;
-  right: calc(61% + 250px);
-  font-size: 56px;
+  left: 10px;
+  top: 0.2rem;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -3px;
   line-height: 1.2;
   position: absolute;
   opacity: 0.4;
   bottom: calc(75% + 3px);
+  z-index: 110;
 }
 
 section {

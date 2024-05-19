@@ -6,14 +6,15 @@ import Hobbies from "./Hobbies";
 import Skills from "./Skills";
 import Education from "./Education";
 import Projects from "./Projects";
+import ProjectsList from "./ProjectsList";
 
 export const components = [
   {
-    title: "devMeven",
+    title: "Who Am I?",
     Component: <DevMeven />,
   },
   {
-    title: "workExpContent2",
+    title: "Currenty Working experience",
     Component: (
       <WorkExpContent
         joinDate={experience[0].joinData}
@@ -28,7 +29,7 @@ export const components = [
     ),
   },
   {
-    title: "workExpContent2",
+    title: "Worked experience",
     Component: (
       <WorkExpContent
         joinDate={experience[1].joinData}
@@ -47,15 +48,15 @@ export const components = [
     Component: <Profile age={{ day: 0, month: 0, year: 0 }} image="" name="" />,
   },
   {
-    title: "skills",
+    title: "Skills",
     Component: <Skills />,
   },
   {
-    title: "education",
+    title: "Education",
     Component: <Education />,
   },
   {
-    title: "projects",
+    title: "Projects",
     Component: <Projects />,
   },
   {

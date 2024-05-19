@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import Image from "next/image";
 
 interface itemsListProps {
   title: string;
@@ -50,12 +51,12 @@ const Slider = ({ videos, itemsList }: SliderProps) => {
     <>
       <AnimatePresence initial={false} custom={direction}>
         {videos[imageIndex] ? (
-          <motion.video
+          <motion.div
             key={page}
-            autoPlay
-            muted
-            width={"100%"}
-            className="object-cover h-[100vh]"
+            // autoPlay
+            // muted
+            // width={"100%"}
+            className="h-[100vh] mt-2"
             custom={direction}
             variants={variants}
             initial="enter"
@@ -77,8 +78,14 @@ const Slider = ({ videos, itemsList }: SliderProps) => {
               }
             }}
           >
-            <source src={videos[imageIndex]}></source>
-          </motion.video>
+            <Image
+              className="object-cover"
+              width={100}
+              height={150}
+              src={videos[imageIndex]}
+              alt={videos[imageIndex]}
+            />
+          </motion.div>
         ) : (
           <div className="w-full h-[100vh] flex justify-center items-center opacity-50 text-gray-700 uppercase text-2xl">
             <h5>No content available</h5>

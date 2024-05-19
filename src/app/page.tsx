@@ -18,9 +18,11 @@ function useParallax(value: MotionValue<number>, distance: number) {
 const RenderAllComponents = ({
   Component,
   id,
+  title,
 }: {
   Component: React.ReactNode;
   id: number;
+  title: string;
 }): any => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
@@ -28,8 +30,7 @@ const RenderAllComponents = ({
   return (
     <section className="flex flex-col w-full">
       <div ref={ref}>{Component}</div>
-
-      <motion.h2 style={{ y }}>{`#${id + 1}.`}</motion.h2>
+      <motion.h2 style={{ y }}>{`#${title}.`}</motion.h2>
     </section>
   );
 };
@@ -48,7 +49,12 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       {components.map(({ Component, title }, index) => (
-        <RenderAllComponents Component={Component} id={index} key={index} />
+        <RenderAllComponents
+          Component={Component}
+          id={index}
+          key={index}
+          title={title}
+        />
       ))}
       <motion.div className="progress" style={{ scaleX }} />
     </div>

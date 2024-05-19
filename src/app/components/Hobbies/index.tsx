@@ -5,10 +5,10 @@ import Slider from "../Slider";
 
 const Hobbies = () => {
   const videos = [
-    "/videos/tracking_1.mp4",
-    "/videos/sports.mp4",
-    "/videos/dance.mp4",
-    "/videos/singing.mp4",
+    "/videos/tracking-opt.gif",
+    "/videos/sport-opt.gif",
+    "/videos/dance-opt.gif",
+    "",
     "",
     "",
   ];

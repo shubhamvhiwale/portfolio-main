@@ -4,5 +4,51 @@
   overflow: hidden;
   padding: 0;
   margin: 0;
-  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-container .example-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-container .next,
+.project-container .prev {
+  top: calc(50% - 20px);
+  position: absolute;
+  background: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.project-container .next {
+  right: 0px;
+}
+
+.project-container .prev {
+  left: 10px;
+  transform: scale(-1);
+}
+
+.project-container .caresoul-container {
+  position: absolute;
+  max-width: 100vw;
+}
+.caresoul-container-shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
