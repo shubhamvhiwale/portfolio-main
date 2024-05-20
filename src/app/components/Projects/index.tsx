@@ -43,8 +43,13 @@ const Projects = () => {
     <div className="project-container flex flex-col w-full sm:flex-row relative bg-[#e8dafe]">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
+          style={{
+            zIndex: 500,
+            width: "100%",
+            left: 0,
+          }}
           key={page}
-          className="caresoul-container h-[33rem] sm:h-auto  shadow-2xl mt-3 sm:mt-auto  bg-[#dec9ff]  sm:shadow-none top-0 sm:top-auto sm:pl-10 sm:bg-[#e8dafe] min-w-[20rem] w-full p-2 sm:border-none  border border-b-gray-900"
+          className="caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl mt-3 sm:mt-auto  bg-[#dec9ff]  sm:shadow-none top-0 sm:top-auto sm:pl-10 sm:bg-[#e8dafe] min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900"
           custom={direction}
           variants={variants}
           initial="enter"
@@ -70,11 +75,17 @@ const Projects = () => {
           {Object.keys(projectData[imageIndex]).map(
             (key: string, index: number) => (
               <div
-                className="flex justify-between sm:w-[60%]"
+                className="flex justify-between w-full"
                 key={`projectData-${index}`}
               >
                 <div className="font-bold uppercase">{key}</div>
-                <div className="p-2 text-[14px] text-end">
+                <div
+                  style={{
+                    height: key === "description" ? "140px" : "",
+                    overflow: key === "description" ? "auto" : "",
+                  }}
+                  className="p-2 text-[14px] text-end"
+                >
                   {Array.isArray(projectData[imageIndex][key])
                     ? projectData[imageIndex][key].map((link: string) => (
                         <>
@@ -95,14 +106,17 @@ const Projects = () => {
           )}
         </motion.div>
       </AnimatePresence>
-      <div className="text-white text-2xl z-20 w-full h-full flex justify-center sm:justify-end items-end pb-20 sm:pb-0 sm:items-center sm:mr-14">
-        <ol className="list-disc">
+      <div
+        style={{ zIndex: 0 }}
+        className="text-white text-2xl z-20 w-full h-full flex justify-center sm:justify-end items-end pb-20 sm:pb-0 sm:items-center"
+      >
+        <ol className="list-disc ml-8  sm:mr-14 uppercase marker:text-black">
           {projectData.map(({ name }, index) => (
-            <li key={index}>
+            <li key={index} className="uppercase">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                className={"text-gray-600"}
+                className={"text-gray-600 uppercase"}
                 onClick={() => {
                   paginate(index);
                 }}

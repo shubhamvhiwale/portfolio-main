@@ -53,26 +53,36 @@ const Profile = ({ image, name, age }: ProfileProps) => {
         <div className="flex justify-between items-center">
           <div className="flex">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-              <div data-aos="fade-up" data-aos-delay="600">
+              <a
+                target="__blank"
+                href="https://www.linkedin.com/in/shubham-hiwale-6329b0242"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <FaLinkedin
                   key="linkedin-icon"
                   size={23}
                   className="cursor-pointer hover:text-blue-500"
                 />
-              </div>
+              </a>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
               className="ml-2"
             >
-              <div data-aos="fade-up" data-aos-delay="700">
+              <a
+                target="__blank"
+                href="https://github.com/shubhamvhiwale"
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
                 <FaGithub
                   key="github-icon"
                   size={23}
                   className="cursor-pointer hover:text-gray-700"
                 />
-              </div>
+              </a>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1 }}
@@ -118,6 +128,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           <div
             data-aos="fade-right"
             data-aos-delay="600"
+            data-aos-offset="100px"
             data-tooltip-id="gmail-tooltip"
             className="cursor-pointer  hover:font-bold email-container mt-3"
             onClick={() => redirectToGmail("shubhamvhiwale@rgmail.com")}
@@ -130,6 +141,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           <div
             data-aos="fade-left"
             data-aos-delay="600"
+            data-aos-offset="100px"
             data-tooltip-id="phone-num-tooltip"
             className="cursor-pointer  hover:font-bold phone-container mt-3"
             onClick={() => redirectToPhoneDial("8600888776")}

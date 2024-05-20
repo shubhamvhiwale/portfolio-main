@@ -144,7 +144,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: violet;
+  background: rgb(246, 191, 255);
   -webkit-border-radius: 1ex;
 }
 

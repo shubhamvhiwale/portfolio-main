@@ -22,10 +22,12 @@ const Skills = () => {
                 <li
                   style={{ backgroundColor: "#e8dafe" }}
                   key={item.label}
-                  className={item === selectedTab ? "selected" : ""}
+                  className={item === selectedTab ? "text-gray-500" : ""}
                   onClick={() => setSelectedTab(item)}
                 >
-                  <div className=" ml-1 p-1 uppercase font-bold">{`${item.label}`}</div>
+                  <div
+                    className={`ml-1 p-1 uppercase font-bold`}
+                  >{`${item.label}`}</div>
                   {item === selectedTab ? (
                     <motion.div className="underline" layoutId="underline" />
                   ) : null}
@@ -38,7 +40,7 @@ const Skills = () => {
           <motion.button
             whileHover={{ scale: 1.5 }}
             whileTap={{ scale: 0.9 }}
-            className="mr-1 pt-1 fixed right-2 top-2"
+            className="mr-1 pt-1 fixed right-2 top-12"
             onClick={handleWholeArr}
           >
             <CgMenuGridR />

@@ -34,7 +34,12 @@ const Education = () => {
     <div className="w-full h-[100vh]">
       <motion.div className="bg-#e8dafe flex items-center justify-center h-screen">
         {/* className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 */}
-        <div className="flex flex-wrap items-center justify-center">
+        <div
+          className="flex flex-wrap items-center justify-center"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-offset="100px"
+        >
           {items.map((item) => (
             <motion.div
               className={`card m-2 bg-gray-200 rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
