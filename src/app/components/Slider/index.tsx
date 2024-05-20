@@ -56,7 +56,7 @@ const Slider = ({ videos, itemsList }: SliderProps) => {
             // autoPlay
             // muted
             // width={"100%"}
-            className="h-[100vh] mt-2"
+            className="h-[100vh]"
             custom={direction}
             variants={variants}
             initial="enter"

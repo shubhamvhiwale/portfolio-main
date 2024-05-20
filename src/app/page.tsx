@@ -29,8 +29,13 @@ const RenderAllComponents = ({
   const y = useParallax(scrollYProgress, 500);
   return (
     <section className="flex flex-col w-full">
-      <div ref={ref}>{Component}</div>
-      <motion.h2 style={{ y }}>{`#${title}.`}</motion.h2>
+      <div className="sm:m-[20px]" ref={ref}>
+        {Component}
+      </div>
+      <motion.h2
+        className="hidden sm:block"
+        style={{ y }}
+      >{`#${title}.`}</motion.h2>
     </section>
   );
 };

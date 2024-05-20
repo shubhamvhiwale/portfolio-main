@@ -194,7 +194,7 @@ section > div {
   width: 100%;
   position: relative;
   max-height: 100vh;
-  margin: 20px;
+  /* margin: 20px; */
   overflow: hidden;
 }
 
@@ -218,7 +218,7 @@ img {
 }
 .profile-container {
   background-image: url("../app/assets/imgs/profile_pic.jpg");
-  background-position: center;
+  background-position: 70% 70%;
   background-repeat: no-repeat;
   background-size: cover;
 }
