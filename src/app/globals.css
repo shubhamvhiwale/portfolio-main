@@ -174,7 +174,7 @@ h2 {
   letter-spacing: -3px;
   line-height: 1.2;
   position: absolute;
-  opacity: 0.4;
+  /* opacity: 0.4; */
   bottom: calc(75% + 3px);
   z-index: 110;
 }

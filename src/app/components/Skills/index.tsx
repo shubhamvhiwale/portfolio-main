@@ -13,14 +13,14 @@ const Skills = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] bg-#e8dafe overflow-hidden p-0 m-0 flex justify-center items-center">
-      <div className="skill-container-window w-full h-[100vh] bg-white overflow-hidden flex flex-col">
+    <div className="w-full h-[100vh] overflow-hidden p-0 m-0 flex justify-center items-center">
+      <div className="skill-container-window w-full h-[100vh]  overflow-hidden flex flex-col">
         <nav className="skill-container-nav bg-#fdfdfd flex justify-center items-center relative overflow-y-hidden overflow-x-auto  md:overflow-hidden">
-          <ul className="flex w-full" style={{ backgroundColor: "#e8dafe" }}>
+          <ul className="flex w-full">
             {!allSkillVisibled ? (
               initialTabs.map((item) => (
                 <li
-                  style={{ backgroundColor: "#e8dafe" }}
+                  // style={{ backgroundColor: "#e8dafe" }}
                   key={item.label}
                   className={item === selectedTab ? "text-gray-500" : ""}
                   onClick={() => setSelectedTab(item)}
@@ -47,7 +47,7 @@ const Skills = () => {
           </motion.button>
         </nav>
         <main
-          style={{ backgroundColor: "#e8dafe" }}
+          // style={{ backgroundColor: "#e8dafe" }}
           className="flex justify-center items-center text-5xl flex-grow skill-main"
         >
           <AnimatePresence mode="wait">

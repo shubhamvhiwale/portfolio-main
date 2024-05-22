@@ -32,7 +32,7 @@ const Education = () => {
   ];
   return (
     <div className="w-full h-[100vh]">
-      <motion.div className="bg-#e8dafe flex items-center justify-center h-screen">
+      <motion.div className="flex items-center justify-center h-screen">
         {/* className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 */}
         <div
           className="flex flex-wrap items-center justify-center"

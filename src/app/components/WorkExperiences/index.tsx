@@ -54,7 +54,7 @@ function ExperienceContent({
           //   "rgba(0, 0, 0, 0.1) -6px -97px 124px 6px, rgba(0, 0, 0, 0.05) 0px 4px 6px -1px",
           overflowY: "auto",
         }}
-        className="bg-[#E8DAFE]"
+        // className="bg-[#E8DAFE]"
       >
         <div className="w-100 pt-8 pr-2 pl-2">
           <div className="flex justify-between px-3">

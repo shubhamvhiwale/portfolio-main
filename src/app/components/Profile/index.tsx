@@ -31,6 +31,18 @@ const Profile = ({ image, name, age }: ProfileProps) => {
   const redirectToPhoneDial = (phoneNumber: string) => {
     window.open(`tel:${phoneNumber}`, "_self");
   };
+  const handleDownload = () => {
+    const url =
+      "https://firebasestorage.googleapis.com/v0/b/portfulio-main.appspot.com/o/resume%2FCurriculumVitae.pdf?alt=media&token=cb22a5fb-4e2a-4e09-9135-6e98d2269fed";
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.setAttribute("download", "CurriculumVitae.pdf"); // You can specify a default file name here
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
   return (
     <div className="w-full h-[100vh] flex flex-col-reverse sm:flex-row  justify-between">
       <div className="w-full sm:w-[75%] h-[100%] sm:h-full flex justify-center flex-col p-5">
@@ -58,6 +70,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
                 href="https://www.linkedin.com/in/shubham-hiwale-6329b0242"
                 data-aos="fade-up"
                 data-aos-delay="600"
+                data-aos-offset="100px"
               >
                 <FaLinkedin
                   key="linkedin-icon"
@@ -76,6 +89,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
                 href="https://github.com/shubhamvhiwale"
                 data-aos="fade-up"
                 data-aos-delay="700"
+                data-aos-offset="100px"
               >
                 <FaGithub
                   key="github-icon"
@@ -89,7 +103,11 @@ const Profile = ({ image, name, age }: ProfileProps) => {
               whileTap={{ scale: 0.8 }}
               className="ml-2"
             >
-              <div data-aos="fade-up" data-aos-delay="800">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="800"
+                data-aos-offset="100px"
+              >
                 <FaFacebook
                   key="facebook-icon"
                   size={23}
@@ -103,7 +121,11 @@ const Profile = ({ image, name, age }: ProfileProps) => {
               whileTap={{ scale: 0.8 }}
               className="ml-2"
             >
-              <div data-aos="fade-up" data-aos-delay="900">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="900"
+                data-aos-offset="100px"
+              >
                 <SiVercel
                   key="vercel-icon"
                   size={23}
@@ -114,6 +136,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           </div>
           <div className="mt-5  flex justify-start donwload-btn-container">
             <motion.button
+              onClick={handleDownload}
               style={{ marginTop: "-20px" }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
@@ -136,7 +159,12 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             <div className="gmail-icon">
               <SiGmail key="gmail" />
             </div>
-            shubhamvhiwale@gmail.com
+            <span
+              style={{ textDecoration: "underline" }}
+              className="text-blue-800"
+            >
+              shubhamvhiwale@gmail.com
+            </span>
           </div>
           <div
             data-aos="fade-left"
@@ -149,7 +177,12 @@ const Profile = ({ image, name, age }: ProfileProps) => {
             <div className="phone-icon">
               <FaPhone key="phone-icon" />
             </div>
-            +91 8600888776
+            <span
+              style={{ textDecoration: "underline" }}
+              className="text-blue-800"
+            >
+              +91 8600888776
+            </span>
           </div>
           <ReactTooltip
             id="phone-num-tooltip"

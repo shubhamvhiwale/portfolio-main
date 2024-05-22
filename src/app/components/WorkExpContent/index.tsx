@@ -29,7 +29,7 @@ const WorkExpContent = ({
 }: ExperienceContentProps) => {
   const [showCount, setShowCount] = useState<boolean>(true);
   return (
-    <div className="bg-[#E8DAFE] flex justify-center items-center w-full h-[100vh]">
+    <div className=" flex justify-center items-center w-full h-[100vh]">
       <div className="w-[880px] md:pt-8 md:p-10">
         <div className="flex justify-between px-3">
           <div className="font-bold">Work Experience</div>

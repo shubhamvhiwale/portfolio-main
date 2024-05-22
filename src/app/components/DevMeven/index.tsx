@@ -2,7 +2,7 @@ import React from "react";
 
 const DevMeven = () => {
   return (
-    <div className="min-h-screen border w-full flex items-center justify-center bg-[#E8DAFE]">
+    <div className="min-h-screen border w-full flex items-center justify-center">
       <div className="w-full md:w-[64%]">
         <div className="flex justify-between px-3 flex-col sm:flex-row">
           <div className="font-bold text-3xl">DevMaven</div>
