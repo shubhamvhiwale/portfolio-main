@@ -48,7 +48,8 @@ const Projects = () => {
             left: 0,
           }}
           key={page}
-          className="caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl mt-3 sm:mt-auto  bg-[#dec9ff]  sm:shadow-none top-0 sm:top-auto sm:pl-10 min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900"
+          id="project-details-view-container"
+          className="bg-[#d5bbff] caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl sm:mt-auto sm:shadow-none top-0 sm:top-auto sm:pl-10 min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900"
           custom={direction}
           variants={variants}
           initial="enter"

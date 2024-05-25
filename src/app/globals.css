@@ -186,10 +186,20 @@ section {
   align-items: center;
   position: relative;
   scroll-snap-align: center;
-  background-color: #e8dafe;
   perspective: 500px;
 }
 
+.main-section-light {
+  background-color: #e8dafe;
+}
+
+.main-section-dark {
+  background-color: #141414 !important;
+  color: rgb(255, 255, 255);
+}
+.main-section-dark #skills-icons-text-black {
+  color: black !important;
+}
 section > div {
   width: 100%;
   position: relative;
@@ -293,8 +303,7 @@ img {
 .skill-container-nav {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: #e8dafe;
-  padding-left: 25px;
+  /* padding-left: 25px; */
 }
 
 .skill-main {
@@ -323,7 +332,6 @@ img {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   position: relative;
-  background: white;
   cursor: pointer;
   height: 40px;
   display: flex;
@@ -347,34 +355,58 @@ img {
   background: #eee;
 }
 
+.icon-javascript {
+  color: black;
+}
 .icon-javascript:hover {
   color: var(--yellow);
   background-color: black;
+}
+.icon-html {
+  color: black;
 }
 .icon-html:hover {
   color: var(--orange);
   /* background-color: white; */
 }
+.icon-redux {
+  color: black;
+}
 .icon-redux:hover {
   color: violet;
   background-color: "";
 }
+.icon-css {
+  color: black;
+}
 .icon-css:hover {
   color: rgb(19, 141, 255);
   background-color: "";
+}
+.icon-materialdesign {
+  color: black;
 }
 .icon-materialdesign:hover {
   color: "";
   background-color: white;
   border-radius: 50px;
 }
+.icon-react {
+  color: black;
+}
 .icon-react:hover {
   color: rgb(49, 216, 253);
   background-color: "";
 }
+.icon-bootstrap {
+  color: black;
+}
 .icon-bootstrap:hover {
   color: rgb(155, 24, 221);
   background-color: "";
+}
+.icon-tailwindcss {
+  color: black;
 }
 .icon-tailwindcss:hover {
   color: rgb(42, 194, 214);
@@ -383,71 +415,137 @@ img {
 .icon-container {
   background-color: rgb(234, 234, 234);
 }
+.icon-container {
+  color: black;
+}
 .icon-container:hover {
   background-color: white;
+}
+.icon-nodejs {
+  color: black;
 }
 .icon-nodejs:hover {
   color: rgb(35, 199, 35);
 }
+.icon-python {
+  color: black;
+}
 .icon-python:hover {
   color: rgb(255, 205, 26);
+}
+.icon-dotnet {
+  color: black;
 }
 .icon-dotnet:hover {
   color: rgb(36, 91, 219);
 }
+.icon-php {
+  color: black;
+}
 .icon-php:hover {
   color: rgb(129, 22, 236);
+}
+.icon-mongodb {
+  color: black;
 }
 .icon-mongodb:hover {
   color: green;
 }
+.icon-mysql {
+  color: black;
+}
 .icon-mysql:hover {
   color: rgb(4, 72, 146);
+}
+.icon-firebase {
+  color: black;
 }
 .icon-firebase:hover {
   color: var(--yellow);
 }
+.icon-visualstudiocode {
+  color: black;
+}
 .icon-visualstudiocode:hover {
   color: rgb(0, 116, 224);
+}
+.icon-pycharm {
+  color: black;
 }
 .icon-pycharm:hover {
   background-color: yellowgreen;
 }
+.icon-visualstudio {
+  color: black;
+}
 .icon-visualstudio:hover {
   color: rgb(129, 22, 236);
 }
+.icon-linux {
+  color: black;
+}
 .icon-linux:hover {
   background-color: var(--yellow);
+}
+.icon-windows {
+  color: black;
 }
 .icon-windows:hover {
   color: white;
   background-color: rgb(80, 191, 255);
 }
+.icon-android {
+  color: black;
+}
 .icon-android:hover {
   color: rgb(75, 225, 75);
+}
+.icon-apple {
+  color: black;
 }
 .icon-apple:hover {
   color: white;
   background-color: black;
 }
+.icon-bitbucket {
+  color: black;
+}
 .icon-bitbucket:hover {
   color: rgb(80, 191, 255);
+}
+.icon-azuredev {
+  color: black;
 }
 .icon-azuredev:hover {
   color: rgb(0, 74, 223);
 }
+.icon-jira {
+  color: black;
+}
 .icon-jira:hover {
   color: rgb(75, 145, 225);
 }
+.icon-jest {
+  color: black;
+}
 .icon-jest:hover {
   color: rgb(177, 6, 6);
+}
+.icon-amazon {
+  color: black;
 }
 .icon-amazon:hover {
   background-color: var(--yellow);
   color: white;
 }
+.icon-heroku {
+  color: black;
+}
 .icon-heroku:hover {
   color: violet;
+}
+.icon-digitalocean {
+  color: black;
 }
 .icon-digitalocean:hover {
   color: blue;
