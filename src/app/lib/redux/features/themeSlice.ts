@@ -4,15 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateProps {
   theme: {
-    // bg: string;
-    // color: string;
     isDark: boolean;
   };
 }
 
 const initialState: InitialStateProps = {
   theme: {
-    //DARK : "#171100" , #141414
     isDark: false,
   },
 };

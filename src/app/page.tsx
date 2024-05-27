@@ -55,7 +55,7 @@ export default function Home() {
     restDelta: 0.001,
   });
 
-  const handleThemeChange = () => {
+  const handleThemeChange = (theme: boolean) => {
     const mainSections = document.querySelectorAll("section");
     const projectViewContainer = document.getElementById(
       "project-details-view-container"
@@ -86,7 +86,20 @@ export default function Home() {
       boltLightningBtn?.classList.add("text-[#e1d633]");
     }
     setIsDarkTheme(!isDarkTheme);
+    const isTheme = !isDarkTheme;
+    window.localStorage.setItem("isTheme", isTheme.toString());
   };
+
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      handleThemeChange(true);
+    } else {
+      handleThemeChange(false);
+    }
+  }, []);
 
   useEffect(() => {
     AOS.init();
@@ -97,7 +110,7 @@ export default function Home() {
       <button
         id="boltLightning-btn"
         className="fixed text-2xl z-30 right-2 top-0"
-        onClick={handleThemeChange}
+        onClick={() => handleThemeChange(isDarkTheme)}
       >
         <FaBoltLightning style={{ textShadow: "10px 10px" }} />
       </button>

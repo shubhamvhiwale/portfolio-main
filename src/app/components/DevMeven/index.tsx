@@ -8,7 +8,7 @@ const DevMeven = () => {
         <div className="flex justify-between px-3 flex-col sm:flex-row">
           <div className="font-bold text-3xl">DevMaven</div>
           <div className="text-[18.2px] tracking-[4.4px]">
-            2+ YEARS EXPERIENCED AS A
+            3+ YEARS EXPERIENCED AS A
           </div>
         </div>
         <div className="w-full text-center text-[4em] sm:text-[5em]  md:text-[8em] font-bold font-jostnormal">

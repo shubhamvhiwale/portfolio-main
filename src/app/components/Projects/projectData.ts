@@ -10,13 +10,13 @@ interface projectDataProps {
 
 export const projectData: projectDataProps[] = [
   {
-    name: "C1 Customer portal",
-    role: "Full stack developer (MERN)",
+    name: "AM AUTOMATION",
+    role: "Full stack developer with PLC (programmable logic controller)",
     duration: "8 months",
     technology: "MERN",
-    liveLink: ["https://www.customercenter.onec1.com"],
+    liveLink: [],
     description:
-      "A customer portal is a secure and personalized online platform that allows customers to access information, services, and support related to a particular business or organization. It serves as a centralized hub where customers can interact with the company, manage their accounts, and find relevant information.",
+      "I worked as a full stack developer on AM Automation software built for the production industry. The software tracks the status of the production cycle. When a cycle is completed, a '1' is input into the PLC (Programmable Logic Controller). The software continuously monitors the PLC's inputs, and when it detects a '1', it marks the cycle as complete and updates the status, prompting the user to start a new cycle. Additionally, the software includes various CRUD (Create, Read, Update, Delete) functionalities. For example, administrators can add parts with names, images, descriptions, and more",
   },
 
   {

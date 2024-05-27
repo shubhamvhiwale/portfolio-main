@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { wrap } from "popmotion";
 import { motion, AnimatePresence } from "framer-motion";
 import { projectData } from "./projectData";
@@ -31,6 +31,7 @@ const swipePower = (offset: number, velocity: number) => {
 
 const Projects = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [isTheme, setIsTheme] = useState(false);
 
   const imageIndex = wrap(0, projectData.length, page);
 
@@ -38,6 +39,10 @@ const Projects = () => {
     const newDirection = pageIndex > page ? 1 : -1;
     setPage([pageIndex, newDirection]);
   };
+
+  useEffect(() => {
+    setIsTheme(Boolean(window.localStorage.getItem("isTheme")));
+  }, [Boolean(window.localStorage.getItem("isTheme"))]);
 
   return (
     <div className="project-container flex flex-col w-full sm:flex-row relative">
@@ -49,7 +54,9 @@ const Projects = () => {
           }}
           key={page}
           id="project-details-view-container"
-          className="bg-[#d5bbff] caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl sm:mt-auto sm:shadow-none top-0 sm:top-auto sm:pl-10 min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900"
+          className={`project-details-view-container ${
+            isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
+          } caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl sm:mt-auto sm:shadow-none top-0 sm:top-auto sm:pl-10 min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900`}
           custom={direction}
           variants={variants}
           initial="enter"
