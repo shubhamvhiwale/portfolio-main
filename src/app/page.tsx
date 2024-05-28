@@ -87,17 +87,21 @@ export default function Home() {
     }
     setIsDarkTheme(!isDarkTheme);
     const isTheme = !isDarkTheme;
-    window?.localStorage?.setItem("isTheme", isTheme.toString());
+    if (typeof window !== "undefined") {
+      window?.localStorage?.setItem("isTheme", isTheme.toString());
+    }
   };
 
   useEffect(() => {
-    if (
-      window?.matchMedia &&
-      window?.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      handleThemeChange(true);
-    } else {
-      handleThemeChange(false);
+    if (typeof window !== "undefined") {
+      if (
+        window?.matchMedia &&
+        window?.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        handleThemeChange(true);
+      } else {
+        handleThemeChange(false);
+      }
     }
   }, []);
 

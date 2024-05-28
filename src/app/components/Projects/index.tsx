@@ -41,8 +41,8 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    setIsTheme(Boolean(window.localStorage.getItem("isTheme")));
-  }, [Boolean(window.localStorage.getItem("isTheme"))]);
+    setIsTheme(Boolean(window?.localStorage?.getItem("isTheme")));
+  }, []);
 
   return (
     <div className="project-container flex flex-col w-full sm:flex-row relative">
