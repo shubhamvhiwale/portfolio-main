@@ -87,13 +87,13 @@ export default function Home() {
     }
     setIsDarkTheme(!isDarkTheme);
     const isTheme = !isDarkTheme;
-    window.localStorage.setItem("isTheme", isTheme.toString());
+    window?.localStorage?.setItem("isTheme", isTheme.toString());
   };
 
   useEffect(() => {
     if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      window?.matchMedia &&
+      window?.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       handleThemeChange(true);
     } else {
