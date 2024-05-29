@@ -18,6 +18,7 @@ export const components = [
     Component: (
       <WorkExpContent
         joinDate={experience[0].joinData}
+        closeDate={experience[0].closeData}
         designation={experience[0].designation}
         organizationName={experience[0].organizationName}
         experience={experience[0].experience}
@@ -33,6 +34,7 @@ export const components = [
     Component: (
       <WorkExpContent
         joinDate={experience[1].joinData}
+        closeDate={experience[1].closeData}
         designation={experience[1].designation}
         organizationName={experience[1].organizationName}
         experience={experience[1].experience}

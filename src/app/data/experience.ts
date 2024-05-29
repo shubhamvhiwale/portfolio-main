@@ -26,9 +26,9 @@ export const experience = [
   {
     number: 1,
     joinData: {
-      day: 18,
+      day: 10,
       month: 11,
-      year: 2022,
+      year: 2021,
     },
     closeData: {
       day: 10,

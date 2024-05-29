@@ -9,6 +9,11 @@ interface ExperienceContentProps {
     month: number;
     year: number;
   };
+  closeDate: {
+    day: number;
+    month: number;
+    year: number;
+  };
   designation: string;
   organizationName: string;
   experience: string[];
@@ -19,6 +24,7 @@ interface ExperienceContentProps {
 
 const WorkExpContent = ({
   joinDate,
+  closeDate,
   designation,
   organizationName,
   experience,
@@ -36,26 +42,53 @@ const WorkExpContent = ({
           {showCount && (
             <div className="flex">
               <CountUp
-                start={-170}
+                start={0}
                 end={joinDate.day}
                 duration={3.75}
                 decimal=""
               />
               &nbsp;/&nbsp;
               <CountUp
-                start={-100}
+                start={0}
                 end={joinDate.month}
                 duration={2.75}
                 decimal=""
               />
               &nbsp;/&nbsp;
               <CountUp
-                start={-2023}
+                start={0}
                 end={joinDate.year}
                 duration={5.75}
                 decimal=""
               />
-              &nbsp;to Till
+              &nbsp;
+              {closeDate.day === 0 ? (
+                "to Till"
+              ) : (
+                <>
+                  to&nbsp;
+                  <CountUp
+                    start={0}
+                    end={closeDate.day}
+                    duration={3.75}
+                    decimal=""
+                  />
+                  &nbsp;/&nbsp;
+                  <CountUp
+                    start={0}
+                    end={closeDate.month}
+                    duration={2.75}
+                    decimal=""
+                  />
+                  &nbsp;/&nbsp;
+                  <CountUp
+                    start={0}
+                    end={closeDate.year}
+                    duration={5.75}
+                    decimal=""
+                  />
+                </>
+              )}
             </div>
           )}
         </div>
