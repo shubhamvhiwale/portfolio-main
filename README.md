@@ -34,3 +34,37 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+next js  version code 14
+----------------------------------------------------------------------------------------------------------------------------
+Question 1,
+
+create your own token api
+using middleware 	
+  ->Checks if the user is authenticated by verifying a token stored in cookies.
+  ->Redirects unauthenticated users to the /login page if they attempt to access protected routes.
+  ->Allows access to all public routes without authentication.
+  ->If the token is expired, it should redirect the user to a /renew-token page where they can refresh their authentication.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Question 2,
+	
+	->dynamic app routing in next js
+		dynamic URL
+
+		Use this api 
+		https://fakestoreapi.com/products
+		1.display all product
+
+
+		Use this api
+		https://fakestoreapi.com/products/1
+		2.display product details
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+       
+
