@@ -33,7 +33,7 @@ const Profile = ({ image, name, age }: ProfileProps) => {
   };
   const handleDownload = () => {
     const url =
-      "https://firebasestorage.googleapis.com/v0/b/portfulio-main.appspot.com/o/resume%2Fshubham_hiwale_cv%20.pdf?alt=media&token=67d50c34-da9d-4165-b7c4-f7adaa3de5fa";
+      "https://firebasestorage.googleapis.com/v0/b/portfulio-main.appspot.com/o/resume%2Fshubham_hiwale_Full_stack.pdf?alt=media&token=9e38dcb4-e77d-42df-8207-a71febaf93d1";
     const link = document.createElement("a");
     link.href = url;
     link.target = "_blank";
