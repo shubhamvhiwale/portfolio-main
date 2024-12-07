@@ -31,6 +31,8 @@ const swipePower = (offset: number, velocity: number) => {
 
 const Projects = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  console.log("page : ", page);
+
   const [isTheme, setIsTheme] = useState(false);
 
   const imageIndex = wrap(0, projectData.length, page);
@@ -59,7 +61,7 @@ const Projects = () => {
           id="project-details-view-container"
           className={`lg:left-20 rounded-lg project-details-view-container ${
             isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
-          } caresoul-container sm:pt-10 h-[22rem] lg:h-auto  shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 sm:w-[95%] min-w-[20rem] w-full lg:w-[50%] p-2 sm:border-none  border border-b-gray-900`}
+          } caresoul-container md:h-[30rem]  sm:pt-10 h-[30rem] lg:h-auto  shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 sm:w-[95%] min-w-[20rem] w-full lg:w-[50%] p-2`}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -69,17 +71,17 @@ const Projects = () => {
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 },
           }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
+          // drag="x"
+          // dragConstraints={{ left: 0, right: 0 }}
+          // dragElastic={1}
+          // onDragEnd={(e, { offset, velocity }) => {
+          //   const swipe = swipePower(offset.x, velocity.x);
+          //   if (swipe < -swipeConfidenceThreshold) {
+          //     paginate(1);
+          //   } else if (swipe > swipeConfidenceThreshold) {
+          //     paginate(-1);
+          //   }
+          // }}
         >
           {Object.keys(projectData[imageIndex]).map(
             (key: string, index: number) => (
@@ -121,11 +123,13 @@ const Projects = () => {
       >
         <ol className="list-disc ml-8  lg:mr-20 uppercase marker:text-black">
           {projectData.map(({ name }, index) => (
-            <li key={index} className="uppercase">
+            <li key={index} className="uppercase text-white">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                className={"text-gray-600 uppercase"}
+                className={
+                  page === index ? `text-white` : `text-gray-600 uppercase`
+                }
                 onClick={() => {
                   paginate(index);
                 }}

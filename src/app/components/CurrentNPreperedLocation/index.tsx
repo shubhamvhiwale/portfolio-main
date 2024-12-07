@@ -89,7 +89,7 @@ const CurrentNPreperedLocation = () => {
       }}
       //   className="flex justify-center items-center"
     >
-      <div className="w-[80%] flex justify-between pb-2">
+      <div className="w-[95%] md:w-[80%] flex justify-between pb-2">
         <div>&#x2758;</div>
         <button
           className={
@@ -157,8 +157,8 @@ const CurrentNPreperedLocation = () => {
         <div>&#x2758;</div>
       </div>
       <div
+        className="w-[95%] md:w-[80%]  md:border md:border-red-600 "
         style={{
-          width: "80%",
           height: "80%",
           overflow: "scroll",
           scrollbarWidth: "none",
