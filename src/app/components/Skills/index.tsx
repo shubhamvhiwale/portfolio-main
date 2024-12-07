@@ -63,9 +63,11 @@ const Skills = () => {
                   ? selectedTab.data.map((item, index) => (
                       <>
                         <motion.div
+                          data-aos-delay="4000"
+                          data-aos="fade-up"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className={`p-5 rounded-md m-2 icon-container ${selectedTab.iconsProps?.iconCls[index]} cursor-pointer`}
+                          className={`border border-red-600 p-5 rounded-md m-2 icon-container ${selectedTab.iconsProps?.iconCls[index]} cursor-pointerss`}
                         >
                           {item}
                         </motion.div>

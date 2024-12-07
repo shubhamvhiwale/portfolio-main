@@ -39,7 +39,7 @@ const RenderAllComponents = ({
         {Component}
       </div>
       <motion.h2
-        className="hidden sm:block"
+        className="hidden sm:block pointer-events-none"
         style={{ y }}
       >{`#${title}.`}</motion.h2>
     </section>

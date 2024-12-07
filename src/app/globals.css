@@ -551,3 +551,6 @@ img {
 .icon-digitalocean:hover {
   color: blue;
 }
+.leaflet-pane{
+  border: 2px solid blue !important;
+}

@@ -85,7 +85,7 @@ const Education = () => {
                           className="absolute top-2 right-2 py-1 px-2 text-center rounded-full"
                           onClick={() => setSelectedId("")}
                         >
-                          <TiDeleteOutline />
+                          <TiDeleteOutline className="text-lg text-gray-700" />
                         </motion.button>
                         <motion.h5 className="text-lg font-bold mb-1 text-gray-700">
                           {item.title}
@@ -98,7 +98,7 @@ const Education = () => {
                         >
                           {item.duration}
                         </motion.p>
-                        <motion.p className="text-sm mb-4 mt-5">
+                        <motion.p className="text-sm mb-4 mt-5 text-gray-700">
                           {item.description}
                         </motion.p>
                       </motion.div>

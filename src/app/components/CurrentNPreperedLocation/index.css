@@ -1,0 +1,10 @@
+.marker-container{
+    border: 2px solid blue;
+}
+.marker-tooltip{
+    color: white;
+    text-align: center;
+    margin-left: 10rem;
+    width: 250px;
+    margin-top:10px;
+}

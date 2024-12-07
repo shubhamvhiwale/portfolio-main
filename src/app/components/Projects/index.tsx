@@ -45,18 +45,21 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="project-container flex flex-col w-full sm:flex-row relative">
+    <div
+      style={{ padding: "20px" }}
+      className="project-container flex flex-col w-full sm:flex-row relative"
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           style={{
             zIndex: 500,
-            left: 0,
+            overflow: "auto",
           }}
           key={page}
           id="project-details-view-container"
-          className={`project-details-view-container ${
+          className={`lg:left-20 rounded-lg project-details-view-container ${
             isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
-          } caresoul-container pt-10 h-[28rem] sm:h-auto  shadow-2xl sm:mt-auto sm:shadow-none top-0 sm:top-auto sm:pl-10 min-w-[20rem] w-full sm:w-[50%] p-2 sm:border-none  border border-b-gray-900`}
+          } caresoul-container sm:pt-10 h-[22rem] lg:h-auto  shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 sm:w-[95%] min-w-[20rem] w-full lg:w-[50%] p-2 sm:border-none  border border-b-gray-900`}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -71,7 +74,6 @@ const Projects = () => {
           dragElastic={1}
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = swipePower(offset.x, velocity.x);
-
             if (swipe < -swipeConfidenceThreshold) {
               paginate(1);
             } else if (swipe > swipeConfidenceThreshold) {
@@ -85,11 +87,11 @@ const Projects = () => {
                 className="flex justify-between w-full"
                 key={`projectData-${index}`}
               >
-                <div className="font-bold uppercase">{key}</div>
+                <div className="font-bold uppercase p-2">{key}</div>
                 <div
                   style={{
                     height: key === "description" ? "140px" : "",
-                    overflow: key === "description" ? "auto" : "",
+                    // overflow: key === "description" ? "auto" : "",
                   }}
                   className="p-2 text-[14px] text-end"
                 >
@@ -115,9 +117,9 @@ const Projects = () => {
       </AnimatePresence>
       <div
         style={{ zIndex: 0 }}
-        className="text-white text-2xl z-20 w-full h-full flex justify-center sm:justify-end items-end pb-20 sm:pb-0 sm:items-center"
+        className="text-white text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center"
       >
-        <ol className="list-disc ml-8  sm:mr-14 uppercase marker:text-black">
+        <ol className="list-disc ml-8  lg:mr-20 uppercase marker:text-black">
           {projectData.map(({ name }, index) => (
             <li key={index} className="uppercase">
               <motion.button

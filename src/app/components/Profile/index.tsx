@@ -42,7 +42,6 @@ const Profile = ({ image, name, age }: ProfileProps) => {
     link.click();
     link.remove();
   };
-
   return (
     <div className="w-full h-[100vh] flex flex-col-reverse sm:flex-row  justify-between">
       <div className="w-full sm:w-[75%] h-[100%] sm:h-full flex justify-center flex-col p-5">
@@ -52,7 +51,11 @@ const Profile = ({ image, name, age }: ProfileProps) => {
         <h3 data-aos="fade-right" className="text-4xl sm:text-7xl md:text-5xl">
           SHUBHAM HIWALE
         </h3>
-        <p className="text-[12px] pt-3">
+        <p
+          className="text-[12px] pt-3"
+          data-aos-delay="600"
+          data-aos="fade-right"
+        >
           A recent graduate with a Bachelors degree in Computer Science from MIT
           College, Aurangabad, was born in 2000. Throughout my academic journey,
           Ive been driven by a profound interest in technology and a thirst for
@@ -134,7 +137,11 @@ const Profile = ({ image, name, age }: ProfileProps) => {
               </div>
             </motion.div>
           </div>
-          <div className="mt-5  flex justify-start donwload-btn-container">
+          <div
+            data-aos-delay="600"
+            data-aos="fade-left"
+            className="mt-5  flex justify-start donwload-btn-container"
+          >
             <motion.button
               onClick={handleDownload}
               style={{ marginTop: "-20px" }}

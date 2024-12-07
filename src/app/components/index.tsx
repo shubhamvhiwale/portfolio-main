@@ -7,6 +7,8 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Projects from "./Projects";
 import ProjectsList from "./ProjectsList";
+import ProjectsV1 from "./ProjectsV1/index";
+import CurrentNPreperedLocation from "./CurrentNPreperedLocation";
 
 export const components = [
   {
@@ -64,5 +66,9 @@ export const components = [
   {
     title: "Hobbies",
     Component: <Hobbies />,
+  },
+  {
+    title: "Current location and Prepered location",
+    Component: <CurrentNPreperedLocation />,
   },
 ];

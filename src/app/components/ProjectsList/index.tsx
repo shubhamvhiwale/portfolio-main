@@ -3,10 +3,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import Jpg1 from "/public/imgs/1.jpg";
-import Jpg2 from "/public/imgs/1.jpg";
-import Jpg3 from "/public/imgs/1.jpg";
-import Jpg4 from "/public/imgs/1.jpg";
-import Jpg5 from "/public/imgs/1.jpg";
+import Jpg2 from "/public/imgs/2.jpg";
+import Jpg3 from "/public/imgs/3.jpg";
+import Jpg4 from "/public/imgs/4.jpg";
+import Jpg5 from "/public/imgs/5.jpg";
 
 const ProjectsList = () => {
   return (
@@ -20,7 +20,7 @@ const ProjectsList = () => {
           <Image
             width={200}
             height={200}
-            src="/public/imgs/1.jpg"
+            src={Jpg1}
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />

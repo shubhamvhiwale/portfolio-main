@@ -14,7 +14,7 @@ const DevMeven = () => {
         <div className="w-full text-center text-[4em] sm:text-[5em]  md:text-[8em] font-bold font-jostnormal">
           JAVASCRIPT
         </div>
-        <div className="tracking-[.20em] text-[48px]  sm:text-[55px] md:text-[45px] px-3">
+        <div className="tracking-[.20em] text-[48px] sm:text-[55px] md:text-[45px] md:text-center px-3">
           FULL STACK DEVELOPER
         </div>
         <div className="px-3 mt-5 md:text-[12px] text-right">
