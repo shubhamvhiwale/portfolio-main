@@ -13,6 +13,7 @@ import { components } from "@/app/components/index";
 import { Provider } from "react-redux";
 import store from "@/app/lib/redux/store";
 import { FaBoltLightning } from "react-icons/fa6";
+import AnimatedCursor from "react-animated-cursor";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -49,6 +50,8 @@ const RenderAllComponents = ({
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  console.log("isDarkTheme : ", isDarkTheme);
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -129,6 +132,20 @@ export default function Home() {
         ))}
       </Provider>
       <motion.div className="progress" style={{ scaleX }} />
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={45}
+        innerScale={1}
+        outerScale={1.7}
+        outerAlpha={0}
+        outerStyle={{
+          border: `2px solid ${isDarkTheme ? "white" : "black"}`,
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+        }}
+        innerStyle={{
+          backgroundColor: isDarkTheme ? "white" : "black",
+        }}
+      />
     </div>
   );
 }

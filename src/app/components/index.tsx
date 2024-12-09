@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import DevMeven from "./DevMeven";
 import WorkExpContent from "./WorkExpContent";
 import Profile from "./Profile";
@@ -8,13 +9,12 @@ import Education from "./Education";
 import Projects from "./Projects";
 import ProjectsList from "./ProjectsList";
 import ProjectsV1 from "./ProjectsV1/index";
-// import CurrentNPreperedLocation from "./CurrentNPreperedLocation";
-
-import dynamic from "next/dynamic";
 
 const CurrentNPreperedLocation = dynamic(
-  () => import("@/app/components/CurrentNPreperedLocation/index"),
-  { ssr: false }
+  () => import("./CurrentNPreperedLocation/index"),
+  {
+    ssr: false,
+  }
 );
 
 export const components = [

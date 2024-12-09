@@ -157,7 +157,7 @@ const CurrentNPreperedLocation = () => {
         <div>&#x2758;</div>
       </div>
       <div
-        className="w-[95%] md:w-[80%]  md:border md:border-red-600 "
+        className="w-[95%] md:w-[80%]"
         style={{
           height: "80%",
           overflow: "scroll",
