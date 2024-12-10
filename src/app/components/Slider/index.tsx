@@ -95,7 +95,11 @@ const Slider = ({ videos, itemsList }: SliderProps) => {
       <div className="prev text-white text-5xl">
         <ol className="w-full">
           {itemsList.map(({ title }, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              data-aos="fade-up"
+              data-aos-duration={(index + 1) * 100}
+            >
               {hobbyIndex === index && "I like"}{" "}
               <motion.button
                 whileHover={{ scale: 1.1 }}

@@ -104,7 +104,7 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("currentLocation");
           }}
         >
-          Current Location
+          1
         </button>
         <div>&#x2758;</div>
         <button
@@ -120,7 +120,7 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("currentCompany");
           }}
         >
-          Current Company
+          2
         </button>
         <div>&#x2758;</div>
         <button
@@ -134,7 +134,7 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("born&Grown");
           }}
         >
-          Born & Grown
+          3
         </button>
         <div>&#x2758;</div>
         <button
@@ -152,7 +152,7 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("preperedLocation");
           }}
         >
-          Prepered Location
+          4
         </button>
         <div>&#x2758;</div>
       </div>

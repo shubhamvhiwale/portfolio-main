@@ -15,6 +15,9 @@ import store from "@/app/lib/redux/store";
 import { FaBoltLightning } from "react-icons/fa6";
 import AnimatedCursor from "react-animated-cursor";
 
+import Image from "next/image";
+import ThnuderGif from "@/app/assets/gifs/thunder.gif";
+
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
@@ -112,8 +115,22 @@ export default function Home() {
     AOS.init();
     AOS.refresh();
   }, []);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
+      <div
+        style={{ right: "200px" }}
+        className="fixed text-2xl z-30 top-0 border-2 border-white"
+      >
+        <Image
+          src={ThnuderGif}
+          alt="thunder"
+          style={{
+            width: "200px",
+            height: "200px",
+          }}
+        />
+      </div>
       <button
         id="boltLightning-btn"
         className="fixed text-2xl z-30 right-2 top-0"

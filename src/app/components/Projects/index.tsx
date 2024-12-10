@@ -3,6 +3,7 @@ import { wrap } from "popmotion";
 import { motion, AnimatePresence } from "framer-motion";
 import { projectData } from "./projectData";
 import "./index.css";
+import useWindowSize from "../../utils/windowSizer";
 
 const variants = {
   enter: (direction: number) => {
@@ -33,6 +34,8 @@ const Projects = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   console.log("page : ", page);
 
+  const { width, height } = useWindowSize();
+  console.log("page-height : ", height, height / 2);
   const [isTheme, setIsTheme] = useState(false);
 
   const imageIndex = wrap(0, projectData.length, page);
@@ -49,7 +52,7 @@ const Projects = () => {
   return (
     <div
       style={{ padding: "20px" }}
-      className="project-container flex flex-col w-full sm:flex-row relative"
+      className="project-container flex flex-col w-full sm:flex-row sm:border-2 sm:border-red-600 relative"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -61,7 +64,7 @@ const Projects = () => {
           id="project-details-view-container"
           className={`lg:left-20 rounded-lg project-details-view-container ${
             isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
-          } caresoul-container md:h-[30rem]  sm:pt-10 h-[30rem] lg:h-auto  shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 sm:w-[95%] min-w-[20rem] w-full lg:w-[50%] p-2`}
+          } caresoul-container sm:pt-10 h-[55%] lg:h-auto shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 w-[95%] min-w-[20rem] lg:w-[50%] p-2`}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -119,11 +122,17 @@ const Projects = () => {
       </AnimatePresence>
       <div
         style={{ zIndex: 0 }}
-        className="text-white text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center"
+        className="text-white text-sm sm:text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center md:border"
       >
         <ol className="list-disc ml-8  lg:mr-20 uppercase marker:text-black">
           {projectData.map(({ name }, index) => (
-            <li key={index} className="uppercase text-white">
+            <li
+              data-aos="fade-left"
+              data-aos-offset="50"
+              data-aos-duration={index * 10}
+              key={index}
+              className="uppercase text-white"
+            >
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
