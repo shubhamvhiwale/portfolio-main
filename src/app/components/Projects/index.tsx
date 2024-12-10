@@ -64,7 +64,7 @@ const Projects = () => {
           id="project-details-view-container"
           className={`lg:left-20 rounded-lg project-details-view-container ${
             isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
-          } caresoul-container sm:pt-10 h-[55%] lg:h-auto shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 w-[95%] min-w-[20rem] lg:w-[50%] p-2`}
+          } caresoul-container sm:pt-10 h-[50%] lg:h-auto shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 w-[95%] min-w-[20rem] lg:w-[50%] p-2`}
           custom={direction}
           variants={variants}
           initial="enter"
