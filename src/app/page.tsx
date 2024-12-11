@@ -109,6 +109,10 @@ export default function Home() {
         handleThemeChange(false);
       }
     }
+    console.log(
+      "This code will only run on the client side : ",
+      window.innerWidth
+    );
   }, []);
 
   useEffect(() => {

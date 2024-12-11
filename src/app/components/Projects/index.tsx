@@ -52,7 +52,7 @@ const Projects = () => {
   return (
     <div
       style={{ padding: "20px" }}
-      className="project-container flex flex-col w-full sm:flex-row sm:border-2 sm:border-red-600 relative"
+      className="project-container flex flex-col w-full sm:flex-row sm:border-2 relative"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -122,7 +122,7 @@ const Projects = () => {
       </AnimatePresence>
       <div
         style={{ zIndex: 0 }}
-        className="text-white text-sm sm:text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center md:border"
+        className="text-white text-sm sm:text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center"
       >
         <ol className="list-disc ml-8  lg:mr-20 uppercase marker:text-black">
           {projectData.map(({ name }, index) => (
