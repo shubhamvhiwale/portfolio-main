@@ -113,14 +113,13 @@ function ExperienceContent({
 const WorkExperiences = () => {
   const introductionRef = useRef<HTMLDivElement>(null);
   const { isDivTouchedToTop } = handleElementTopTouch(introductionRef);
-  console.log("isDivTouchedToTop-WorkExperiences : ", isDivTouchedToTop);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 50,
     damping: 30,
     restDelta: 0.001,
   });
-  console.log("scaleX : ", scaleX);
 
   return (
     <>

@@ -32,10 +32,7 @@ const swipePower = (offset: number, velocity: number) => {
 
 const Projects = () => {
   const [[page, direction], setPage] = useState([0, 0]);
-  console.log("page : ", page);
 
-  const { width, height } = useWindowSize();
-  console.log("page-height : ", height, height / 2);
   const [isTheme, setIsTheme] = useState(false);
 
   const imageIndex = wrap(0, projectData.length, page);
@@ -52,7 +49,7 @@ const Projects = () => {
   return (
     <div
       style={{ padding: "20px" }}
-      className="project-container flex flex-col w-full sm:flex-row sm:border-2 relative"
+      className="project-container flex flex-col w-full sm:flex-row relative"
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -122,9 +119,12 @@ const Projects = () => {
       </AnimatePresence>
       <div
         style={{ zIndex: 0 }}
-        className="text-white text-sm sm:text-2xl z-20 mt-20 pb-10 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center"
+        className=" text-white text-2xl z-20 mt-20 pb-0 sm:pb-20 lg:mt-0 w-full h-full flex justify-center lg:justify-end items-end lg:pb-0 lg:items-center"
       >
-        <ol className="list-disc ml-8  lg:mr-20 uppercase marker:text-black">
+        <ol
+          style={{ listStyle: "none" }}
+          className="list-disc sm:ml-8 text-3xl h-[50%] w-full sm:w-auto text-center sm:text-left flex items-center sm:items-start flex-col justify-center lg:mr-20 uppercase marker:text-black"
+        >
           {projectData.map(({ name }, index) => (
             <li
               data-aos="fade-left"

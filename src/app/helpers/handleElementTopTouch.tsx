@@ -7,10 +7,8 @@ const HandleElementTopTouch = (elementRef: any) => {
       if (elementRef.current) {
         const rect = elementRef.current.getBoundingClientRect();
         if (rect.top <= 50) {
-          console.log("Div touched or passed the top of the page.");
           setIsDivTouchedToTop(true);
         } else {
-          console.log("Div is still below the top of the page.");
           setIsDivTouchedToTop(false);
         }
       }

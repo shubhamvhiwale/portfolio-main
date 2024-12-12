@@ -53,7 +53,6 @@ const RenderAllComponents = ({
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  console.log("isDarkTheme : ", isDarkTheme);
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -109,10 +108,6 @@ export default function Home() {
         handleThemeChange(false);
       }
     }
-    console.log(
-      "This code will only run on the client side : ",
-      window.innerWidth
-    );
   }, []);
 
   useEffect(() => {
@@ -160,11 +155,11 @@ export default function Home() {
         outerScale={1.7}
         outerAlpha={0}
         outerStyle={{
-          border: `2px solid ${isDarkTheme ? "white" : "black"}`,
+          border: `2px solid white}`,
           backgroundColor: "rgba(0, 0, 0, 0.2)",
         }}
         innerStyle={{
-          backgroundColor: isDarkTheme ? "white" : "black",
+          backgroundColor: "white",
         }}
       />
     </div>
