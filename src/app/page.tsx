@@ -34,18 +34,36 @@ const RenderAllComponents = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 500);
+  console.log("scrollYProgress : ", y);
+
   return (
     <section
       id="main-section"
       className="flex flex-col w-full main-section-light"
     >
+      <h3
+        className={`${
+          title === "profile" ? "hidden" : "block"
+        } absolute bottom-5 z-50 left-2 block sm:hidden`}
+      >
+        # {title}
+      </h3>
       <div className="sm:m-[20px]" ref={ref}>
         {Component}
       </div>
       <motion.h2
-        className="hidden sm:block pointer-events-none"
-        style={{ y }}
-      >{`#${title}.`}</motion.h2>
+        className="hidden sm:block top-0 z-[1000px] pointer-events-none"
+        style={{
+          ...{ y },
+          fontFamily: "sans-serif",
+          fontStyle: "normal",
+          letterSpacing: "0.3px",
+          fontSize: "18px",
+          marginTop: "5px",
+        }}
+      >
+        #&nbsp;{`${title}.`}
+      </motion.h2>
     </section>
   );
 };
@@ -117,7 +135,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
-      <div
+      {/* <div
         style={{ right: "200px" }}
         className="fixed text-2xl z-30 top-0 border-2 border-white"
       >
@@ -129,7 +147,7 @@ export default function Home() {
             height: "200px",
           }}
         />
-      </div>
+      </div> */}
       <button
         id="boltLightning-btn"
         className="fixed text-2xl z-30 right-2 top-0"

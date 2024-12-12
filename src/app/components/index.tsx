@@ -7,8 +7,6 @@ import Hobbies from "./Hobbies";
 import Skills from "./Skills";
 import Education from "./Education";
 import Projects from "./Projects";
-import ProjectsList from "./ProjectsList";
-import ProjectsV1 from "./ProjectsV1/index";
 
 const CurrentNPreperedLocation = dynamic(
   () => import("./CurrentNPreperedLocation/index"),

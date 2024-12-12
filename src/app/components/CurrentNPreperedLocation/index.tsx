@@ -90,7 +90,7 @@ const CurrentNPreperedLocation = () => {
       //   className="flex justify-center items-center"
     >
       <div className="w-[95%] md:w-[80%] flex justify-between pb-2">
-        <div>&#x2758;</div>
+        <div className="border-l-2"></div>
         <button
           className={
             selectedLocation === "currentLocation" ? "text-blue-600" : ""
@@ -104,9 +104,9 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("currentLocation");
           }}
         >
-          1
+          Current Location
         </button>
-        <div>&#x2758;</div>
+        <div className="border-l-2"></div>
         <button
           className={
             selectedLocation === "currentCompany" ? "text-blue-600" : ""
@@ -120,9 +120,9 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("currentCompany");
           }}
         >
-          2
+          Current Company
         </button>
-        <div>&#x2758;</div>
+        <div className="border-l-2"></div>
         <button
           className={selectedLocation === "born&Grown" ? "text-blue-600" : ""}
           onClick={() => {
@@ -134,9 +134,9 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("born&Grown");
           }}
         >
-          3
+          Born & Grown
         </button>
-        <div>&#x2758;</div>
+        <div className="border-l-2"></div>
         <button
           className={
             selectedLocation === "preperedLocation" ? "text-blue-600" : ""
@@ -152,9 +152,9 @@ const CurrentNPreperedLocation = () => {
             setSelectedLocation("preperedLocation");
           }}
         >
-          4
+          Prepered Location
         </button>
-        <div>&#x2758;</div>
+        <div className="border-l-2"></div>
       </div>
       <div
         className="w-[95%] md:w-[80%]"
