@@ -85,34 +85,39 @@ const Projects = () => {
         >
           {Object.keys(projectData[imageIndex]).map(
             (key: string, index: number) => (
-              <div
-                className="flex justify-between w-full"
-                key={`projectData-${index}`}
-              >
-                <div className="font-bold uppercase p-2">{key}</div>
+              <>
                 <div
-                  style={{
-                    height: key === "description" ? "140px" : "",
-                    // overflow: key === "description" ? "auto" : "",
-                  }}
-                  className="p-2 text-[14px] text-end"
+                  className="flex justify-between w-full"
+                  key={`projectData-${index}`}
                 >
-                  {Array.isArray(projectData[imageIndex][key])
-                    ? projectData[imageIndex][key].map((link: string) => (
-                        <>
-                          <a
-                            className="text-blue-800"
-                            target="__blank"
-                            href={link}
-                          >
-                            {link}
-                          </a>
-                          <br />
-                        </>
-                      ))
-                    : projectData[imageIndex][key]}
+                  <div className="font-bold uppercase p-2">{key}</div>
+                  <div
+                    // style={{
+                    //   height: key === "description" ? "140px" : "",
+                    //   // overflow: key === "description" ? "auto" : "",
+                    // }}
+                    className="p-2 text-[14px] text-end"
+                  >
+                    {Array.isArray(projectData[imageIndex][key])
+                      ? projectData[imageIndex][key].map((link: string) => (
+                          <>
+                            <a
+                              className="text-blue-800"
+                              target="__blank"
+                              href={link}
+                            >
+                              {link}
+                            </a>
+                            <br />
+                          </>
+                        ))
+                      : key !== "description" && projectData[imageIndex][key]}
+                  </div>
                 </div>
-              </div>
+                <div className="pl-2">
+                  {key === "description" && projectData[imageIndex][key]}
+                </div>
+              </>
             )
           )}
         </motion.div>

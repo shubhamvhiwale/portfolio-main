@@ -56,14 +56,14 @@ const Profile = ({ image, name, age }: ProfileProps) => {
           data-aos-delay="600"
           data-aos="fade-right"
         >
-          A recent graduate with a Bachelors degree in Computer Science from MIT
-          College, Aurangabad, was born in 2000. Throughout my academic journey,
-          Ive been driven by a profound interest in technology and a thirst for
-          knowledge in the realm of computer science. MIT College provided me
-          with a nurturing environment to hone my skills in programming, delve
-          into algorithms, and master data structures. Now equipped with a solid
-          foundation, Im eager to apply my expertise to real-world challenges
-          and contribute meaningfully to the field.
+          A graduate with a Bachelors degree in Computer Science from MIT
+          College, Aurangabad, in 2021, was born in 2000. Throughout my academic
+          journey, Ive been driven by a profound interest in technology and a
+          thirst for knowledge in the realm of computer science. MIT College
+          provided me with a nurturing environment to hone my skills in
+          programming, delve into algorithms, and master data structures. Now
+          equipped with a solid foundation, Im eager to apply my expertise to
+          real-world challenges and contribute meaningfully to the field.
         </p>
         <div className="flex justify-between items-center">
           <div className="flex">

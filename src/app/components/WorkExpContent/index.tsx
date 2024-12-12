@@ -46,20 +46,23 @@ const WorkExpContent = ({
                 end={joinDate.day}
                 duration={3.75}
                 decimal=""
+                separator=""
               />
-              &nbsp;/&nbsp;
+              /
               <CountUp
                 start={0}
                 end={joinDate.month}
                 duration={2.75}
                 decimal=""
+                separator=""
               />
-              &nbsp;/&nbsp;
+              /
               <CountUp
                 start={0}
                 end={joinDate.year}
                 duration={5.75}
                 decimal=""
+                separator=""
               />
               &nbsp;
               {closeDate.day === 0 ? (
@@ -72,20 +75,23 @@ const WorkExpContent = ({
                     end={closeDate.day}
                     duration={3.75}
                     decimal=""
+                    separator=""
                   />
-                  &nbsp;/&nbsp;
+                  /
                   <CountUp
                     start={0}
                     end={closeDate.month}
                     duration={2.75}
                     decimal=""
+                    separator=""
                   />
-                  &nbsp;/&nbsp;
+                  /
                   <CountUp
                     start={0}
                     end={closeDate.year}
                     duration={5.75}
                     decimal=""
+                    separator=""
                   />
                 </>
               )}

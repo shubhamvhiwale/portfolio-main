@@ -61,11 +61,12 @@ function ExperienceContent({
             <div className="font-bold">Work Experience</div>
             {showCount && (
               <div className="flex">
-                <CountUp
+                {/* <CountUp
                   start={-170}
                   end={joinDate.day}
                   duration={3.75}
                   decimal=""
+                  separator=""
                 />
                 &nbsp;/&nbsp;
                 <CountUp
@@ -73,6 +74,7 @@ function ExperienceContent({
                   end={joinDate.month}
                   duration={2.75}
                   decimal=""
+                  separator=""
                 />
                 &nbsp;/&nbsp;
                 <CountUp
@@ -80,7 +82,9 @@ function ExperienceContent({
                   end={joinDate.year}
                   duration={5.75}
                   decimal=""
-                />
+                  separator=""
+                /> */}
+                {joinDate.day}/{joinDate.month}/{joinDate.year}
                 &nbsp;to Till
               </div>
             )}
