@@ -1,79 +1,118 @@
-import dynamic from "next/dynamic";
-import DevMeven from "./DevMeven";
-import WorkExpContent from "./WorkExpContent";
-import Profile from "./Profile";
-import { experience } from "@/app/data/experience";
-import Hobbies from "./Hobbies";
-import Skills from "./Skills";
-import Education from "./Education";
-import Projects from "./Projects";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { FaBoltLightning } from "react-icons/fa6";
+import { components } from "./components";
+import useThemeContext from "../utils/themeContext";
 
-const CurrentNPreperedLocation = dynamic(
-  () => import("./CurrentNPreperedLocation/index"),
-  {
-    ssr: false,
-  }
-);
+const themes: any = {
+  dark: {
+    isDark: true,
+    theme: {
+      text: "white",
+      bg: "black",
+    },
+  },
+  light: {
+    isDark: false,
+    theme: {
+      text: "black",
+      bg: "#d5bbff",
+    },
+  },
+};
 
-export const components = [
-  {
-    title: "Who Am I?",
-    Component: <DevMeven />,
-  },
-  {
-    title: "Currenty Working experience",
-    Component: (
-      <WorkExpContent
-        joinDate={experience[0].joinData}
-        closeDate={experience[0].closeData}
-        designation={experience[0].designation}
-        organizationName={experience[0].organizationName}
-        experience={experience[0].experience}
-        number={experience[0].number}
-        designationfS={experience[0].designationfS}
-        orgnizationfS={experience[0].orgnizationfS}
-        letterSpacing={experience[0].letterSpacing}
-      />
-    ),
-  },
-  {
-    title: "Worked experience",
-    Component: (
-      <WorkExpContent
-        joinDate={experience[1].joinData}
-        closeDate={experience[1].closeData}
-        designation={experience[1].designation}
-        organizationName={experience[1].organizationName}
-        experience={experience[1].experience}
-        number={experience[1].number}
-        designationfS={experience[1].designationfS}
-        orgnizationfS={experience[1].orgnizationfS}
-        letterSpacing={experience[1].letterSpacing}
-      />
-    ),
-  },
-  {
-    title: "profile",
-    Component: <Profile age={{ day: 0, month: 0, year: 0 }} image="" name="" />,
-  },
-  {
-    title: "Skills",
-    Component: <Skills />,
-  },
-  {
-    title: "Education",
-    Component: <Education />,
-  },
-  {
-    title: "Projects",
-    Component: <Projects />,
-  },
-  {
-    title: "Hobbies",
-    Component: <Hobbies />,
-  },
-  {
-    title: "Current location and Prepered location",
-    Component: <CurrentNPreperedLocation />,
-  },
-];
+const RenderAllComponents = ({
+  Component,
+  id,
+  title,
+  theme,
+}: {
+  Component: React.ReactNode;
+  id: number;
+  title: string;
+  theme: any;
+}): any => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 500);
+
+  return (
+    <section
+      id="main-section"
+      className="flex flex-col w-full main-section-light"
+    >
+      <h3
+        className={`${
+          title === "profile" ? "hidden" : "block"
+        } absolute bottom-5 z-50 left-2 block sm:hidden`}
+      >
+        # {title}
+      </h3>
+      <div
+        className={`dark:text-white dark:bg-[#191919]  sm:m-[20px]`}
+        ref={ref}
+      >
+        {Component}
+      </div>
+      <motion.h2
+        className="hidden sm:block top-0 z-[1000px] pointer-events-none"
+        style={{
+          ...{ y },
+          fontFamily: "sans-serif",
+          fontStyle: "normal",
+          letterSpacing: "0.3px",
+          fontSize: "18px",
+          marginTop: "5px",
+        }}
+      >
+        #&nbsp;{`${title}.`}
+      </motion.h2>
+    </section>
+  );
+};
+
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
+
+const PortpolioMain = () => {
+  const { theme, setT } = useThemeContext();
+
+  const themeModeHandler = (themeType: any) => {
+    const themeData = themes[themeType];
+    setT(themeData);
+    document.body.classList.toggle("dark");
+  };
+
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-between">
+      <button
+        id="boltLightning-btn"
+        className="fixed text-2xl z-30 right-2 top-0"
+        onClick={() => themeModeHandler(theme.isDark ? "light" : "dark")}
+      >
+        <FaBoltLightning
+          className="dark:text-white"
+          style={{ textShadow: "10px 10px" }}
+        />
+      </button>
+      {components.map(({ Component, title }, index) => (
+        <RenderAllComponents
+          Component={Component}
+          id={index}
+          key={index}
+          title={title}
+          theme={theme}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default PortpolioMain;

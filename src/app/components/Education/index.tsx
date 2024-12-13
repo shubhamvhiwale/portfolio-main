@@ -42,7 +42,7 @@ const Education = () => {
         >
           {items.map((item) => (
             <motion.div
-              className={`card m-2 bg-gray-200 rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
+              className={`dark:bg-[gray] bg-[#bfa8e5] dark:text-white card m-2 rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 hover:scale-105 ${
                 selectedId === item.id ? "card-selected" : ""
               }`}
               layoutId={`card-container-${item.id}`}
@@ -53,7 +53,7 @@ const Education = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="card-content w-[300px] h-[200px] p-5 flex text-center justify-center items-center">
-                <motion.h5 className="text-3xl font-bold mb-1 text-gray-700">
+                <motion.h5 className="text-3xl font-bold mb-1">
                   {item.subtitle}
                 </motion.h5>
               </div>

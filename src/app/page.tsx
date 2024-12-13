@@ -9,64 +9,10 @@ import {
   useTransform,
   MotionValue,
 } from "framer-motion";
-import { components } from "@/app/components/index";
 import { Provider } from "react-redux";
 import store from "@/app/lib/redux/store";
-import { FaBoltLightning } from "react-icons/fa6";
 import AnimatedCursor from "react-animated-cursor";
-
-import Image from "next/image";
-import ThnuderGif from "@/app/assets/gifs/thunder.gif";
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
-const RenderAllComponents = ({
-  Component,
-  id,
-  title,
-}: {
-  Component: React.ReactNode;
-  id: number;
-  title: string;
-}): any => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 500);
-  console.log("scrollYProgress : ", y);
-
-  return (
-    <section
-      id="main-section"
-      className="flex flex-col w-full main-section-light"
-    >
-      <h3
-        className={`${
-          title === "profile" ? "hidden" : "block"
-        } absolute bottom-5 z-50 left-2 block sm:hidden`}
-      >
-        # {title}
-      </h3>
-      <div className="sm:m-[20px]" ref={ref}>
-        {Component}
-      </div>
-      <motion.h2
-        className="hidden sm:block top-0 z-[1000px] pointer-events-none"
-        style={{
-          ...{ y },
-          fontFamily: "sans-serif",
-          fontStyle: "normal",
-          letterSpacing: "0.3px",
-          fontSize: "18px",
-          marginTop: "5px",
-        }}
-      >
-        #&nbsp;{`${title}.`}
-      </motion.h2>
-    </section>
-  );
-};
+import PortpolioMain from "@/app/components/index";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -115,18 +61,18 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (
-        window?.matchMedia &&
-        window?.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        handleThemeChange(true);
-      } else {
-        handleThemeChange(false);
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     if (
+  //       window?.matchMedia &&
+  //       window?.matchMedia("(prefers-color-scheme: dark)").matches
+  //     ) {
+  //       handleThemeChange(true);
+  //     } else {
+  //       handleThemeChange(false);
+  //     }
+  //   }
+  // }, []);
 
   useEffect(() => {
     AOS.init();
@@ -134,36 +80,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between">
-      {/* <div
-        style={{ right: "200px" }}
-        className="fixed text-2xl z-30 top-0 border-2 border-white"
-      >
-        <Image
-          src={ThnuderGif}
-          alt="thunder"
-          style={{
-            width: "200px",
-            height: "200px",
-          }}
-        />
-      </div> */}
-      <button
-        id="boltLightning-btn"
-        className="fixed text-2xl z-30 right-2 top-0"
-        onClick={() => handleThemeChange(isDarkTheme)}
-      >
-        <FaBoltLightning style={{ textShadow: "10px 10px" }} />
-      </button>
+    <>
       <Provider store={store}>
-        {components.map(({ Component, title }, index) => (
-          <RenderAllComponents
-            Component={Component}
-            id={index}
-            key={index}
-            title={title}
-          />
-        ))}
+        <PortpolioMain />
       </Provider>
       <motion.div className="progress" style={{ scaleX }} />
       <AnimatedCursor
@@ -180,6 +99,6 @@ export default function Home() {
           backgroundColor: "white",
         }}
       />
-    </div>
+    </>
   );
 }

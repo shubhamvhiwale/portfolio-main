@@ -414,7 +414,10 @@ img {
   background-color: "";
 }
 .icon-container {
-  background-color: rgb(234, 234, 234);
+  background-color: white;
+}
+.icon-container-light {
+  background-color: blue;
 }
 .icon-container {
   color: black;

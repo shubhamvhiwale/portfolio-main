@@ -1,13 +1,13 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setTheme } from "@/app/lib/redux/features/themeSlice";
+import React, { useState } from "react";
+import useThemeContext from "../../utils/themeContext";
+
 const DevMeven = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center">
       <div className="w-full md:w-[64%]">
         <div className="flex justify-between px-3 flex-col sm:flex-row">
           <div className="font-bold text-3xl">DevMaven</div>
-          <div className="text-[18.2px] tracking-[4.4px]">
+          <div className="dark:bg-blue-900 text-[18.2px] tracking-[4.4px]">
             3+ YEARS EXPERIENCED AS A
           </div>
         </div>

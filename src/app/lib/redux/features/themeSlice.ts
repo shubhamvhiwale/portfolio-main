@@ -3,14 +3,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateProps {
+  isDark: boolean;
   theme: {
-    isDark: boolean;
+    text: string;
+    bg: string;
   };
 }
 
 const initialState: InitialStateProps = {
+  isDark: false,
   theme: {
-    isDark: false,
+    text: "black",
+    bg: "#d5bbff",
   },
 };
 
@@ -19,7 +23,7 @@ const themeSlice = createSlice({
   initialState,
   reducers: {
     setTheme: (state, action) => {
-      state.theme.isDark = action.payload.isDark;
+      return { ...state, ...action.payload };
     },
   },
 });

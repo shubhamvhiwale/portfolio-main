@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projectData } from "./projectData";
 import "./index.css";
 import useWindowSize from "../../utils/windowSizer";
+import useThemeContext from "@/app/utils/themeContext";
 
 const variants = {
   enter: (direction: number) => {
@@ -31,9 +32,8 @@ const swipePower = (offset: number, velocity: number) => {
 };
 
 const Projects = () => {
+  const { theme } = useThemeContext();
   const [[page, direction], setPage] = useState([0, 0]);
-
-  const [isTheme, setIsTheme] = useState(false);
 
   const imageIndex = wrap(0, projectData.length, page);
 
@@ -41,10 +41,6 @@ const Projects = () => {
     const newDirection = pageIndex > page ? 1 : -1;
     setPage([pageIndex, newDirection]);
   };
-
-  useEffect(() => {
-    setIsTheme(Boolean(window?.localStorage?.getItem("isTheme")));
-  }, []);
 
   return (
     <div
@@ -56,12 +52,11 @@ const Projects = () => {
           style={{
             zIndex: 500,
             overflow: "auto",
+            backgroundColor: theme.isDark ? "gray" : "#bfa8e5",
           }}
           key={page}
           id="project-details-view-container"
-          className={`lg:left-20 rounded-lg project-details-view-container ${
-            isTheme ? "bg-[gray]" : "bg-[#d5bbff]"
-          } caresoul-container sm:pt-10 h-[50%] lg:h-auto shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 w-[95%] min-w-[20rem] lg:w-[50%] p-2`}
+          className={`lg:left-20 rounded-lg caresoul-container sm:pt-10 h-[50%] lg:h-auto shadow-2xl lg:mt-auto lg:shadow-none top-2 lg:top-auto lg:pl-10 w-[95%] min-w-[20rem] lg:w-[50%] p-2`}
           custom={direction}
           variants={variants}
           initial="enter"
