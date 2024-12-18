@@ -136,9 +136,13 @@ const Projects = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                className={
-                  page === index ? `text-white` : `text-gray-600 uppercase`
-                }
+                className={`${
+                  page === index
+                    ? theme.isDark
+                      ? `text-white`
+                      : "text-[#000000]"
+                    : `text-gray-600`
+                } uppercase`}
                 onClick={() => {
                   paginate(index);
                 }}

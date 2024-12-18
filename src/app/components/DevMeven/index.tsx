@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useThemeContext from "../../utils/themeContext";
 
 const DevMeven = () => {
   return (
@@ -7,7 +6,7 @@ const DevMeven = () => {
       <div className="w-full md:w-[64%]">
         <div className="flex justify-between px-3 flex-col sm:flex-row">
           <div className="font-bold text-3xl">DevMaven</div>
-          <div className="dark:bg-blue-900 text-[18.2px] tracking-[4.4px]">
+          <div className="text-[18.2px] tracking-[4.4px]">
             3+ YEARS EXPERIENCED AS A
           </div>
         </div>
