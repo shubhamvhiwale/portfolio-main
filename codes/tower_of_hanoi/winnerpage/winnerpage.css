@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* Container Styles */
+  div {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffdf00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Subtext Styles */
+  div > div:nth-child(2) {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Button Container */
+  div > div:nth-child(3) {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: #ffdf00;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #ffb700;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    transform: scale(1);
+    background-color: #e6a700;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    div > div:nth-child(2) {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }
+  
