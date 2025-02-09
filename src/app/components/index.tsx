@@ -54,14 +54,11 @@ const RenderAllComponents = ({
       >
         # {title}
       </h3>
-      <div
-        className={`dark:text-white dark:bg-[#191919]  sm:m-[20px]`}
-        ref={ref}
-      >
+      <div className={`dark:text-white dark:bg-[#191919]`} ref={ref}>
         {Component}
       </div>
-      <motion.h2
-        className="hidden sm:block top-0 z-[1000px] pointer-events-none"
+      {/* <motion.h2
+        className="hidden sm:block top-0 z-[1000px] pointer-events-none dark:text-white"
         style={{
           ...{ y },
           fontFamily: "sans-serif",
@@ -72,7 +69,7 @@ const RenderAllComponents = ({
         }}
       >
         #&nbsp;{`${title}.`}
-      </motion.h2>
+      </motion.h2> */}
     </section>
   );
 };
